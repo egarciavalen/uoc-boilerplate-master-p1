@@ -1,5 +1,12 @@
 @use "../variables";
 
+.circle {
+  clip-path: circle(35%);
+}
+
+
+/**
+
 * {
   box-sizing: border-box;
 }
@@ -16,6 +23,7 @@ body {
   background-color: variables.$uoc-bg;
   color: variables.$uoc-corporate;
 }
+
 
 .uoc-container {
   max-width: 800px;
@@ -58,3 +66,5 @@ body {
   font-size: 0.75rem;
   text-align: center;
 }
+
+**/

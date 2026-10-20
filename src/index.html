@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
 
     <!-- Icono a mostrar en la pestaña -->
-    <link rel="shortcut icon" href="./assets/icons/icons8-astronauta-50.png">
+    <link rel="shortcut icon" href="./assets/icons/icons8-astronauta-50.png?as=webp">
 
     <!-- Título -->
     <title>Proyecto Hail Mary</title>
@@ -41,15 +41,21 @@
 
     <!-- Contenido principal -->
     <main>
-
       <article>
-
+        
         <!-- Cabecera con el título -->
         <header>
           <h2><q>¿Cuántas son dos y dos?</q></h2>
           <p>Salvando tu hogar a años luz de distancia</p>
-        </header>
 
+          <!-- Uso de una imagen adaptable -->
+          <!-- Técnica de cambio de resolución: Diferentes tamaños-->
+          <img class="circle"
+            srcset="./assets/images/astronaut-11080_640.jpg?as=webp 640w, ./assets/images/astronaut-11080_1280.jpg?as=webp 1280w"
+            sizes="(width <= 3000px) 640px, 1280px" src="./assets/images/astronaut-11080_640.jpg?as=webp"
+            alt="Astronauta en el espacio" />
+  
+        </header>
 
         <!-- Introducción -->
         <section id="introduccion">
@@ -86,7 +92,7 @@
         <section id="autor">
           <h3>Autor</h3>
           <figure>
-            <img src="./assets/images/andy_weir.jpg" alt="Autor del libro Proyecto Hail Mary" >
+            <img src="./assets/images/andy_weir.jpg?as=webp" alt="Autor del libro Proyecto Hail Mary" >
             <figcaption>Autor del libro <cite>Proyecto Hail Mary</cite></figcaption>
           </figure>
           <p>
@@ -104,7 +110,7 @@
         <section id="pelicula">
           <h3>Película</h3>
           <figure>
-            <img src="./assets/images/hail_mary_pelicula.jpg" alt="Carátula de la película Proyecto Hail Mary" >
+            <img src="./assets/images/hail_mary_pelicula.jpg?as=webp" alt="Carátula de la película Proyecto Hail Mary" >
             <figcaption>Portada de la película <cite>Proyecto Hail Mary</cite></figcaption>
           </figure>
           <p>
@@ -120,45 +126,10 @@
             En el momento de escribir esta reseña tiene un 7,2 en la página web de <a href="https://www.filmaffinity.com/es/film240424.html" title="Página de Proyecto Hail Mary en filmaffinity">filmaffinity</a>.
           </p>
         </section>
-
+    
         <!-- Bibliografía -->
-        <section id="bibliografia">
-          <h3>Bibliografía</h3>
-          <ul>
-            <li>Fuentes de información</li>
-            <ul>
-              <li>
-                Documentación de la obra <cite>Proyecto Hail Mary</cite> obtenida de <a href="https://es.wikipedia.org/wiki/Proyecto_Hail_Mary" title="Explicación de la obra Proyect Hail Mary">Wikipedia</a>.
-              </li>
-              <li>
-                Información de Andy Weir referenciada a través de su página de <a href="https://es.wikipedia.org/wiki/Andy_Weir" title="Contenido referente a Andy Weir">Wikipedia</a>.
-              </li>
-              <li>
-                Contenido asociado a la adaptación cinematográfica conseguido desde <a href="https://www.filmaffinity.com/es/film240424.html" title="Información de la película de Proyecto Hail Mary">filmaffinity</a>.
-              </li>
-              <li>
-                Página web oficial de <a href="https://andyweirauthor.com/" title="Contenido oficial sobre Andy Weir">Andy Weir</a>
-              </li>
-              <li>
-                Explicación de lo que es el <a href="https://kappabunko.com/premios-literarios/premio-seiun/" title="Historia del Premio Seiun">Premio Seiun</a>
-              </li>
-              <li>
-                Definición y ganadores de las ediciones del <a href="https://www.thehugoawards.org/campbell-history/" title="Trayectoria del premio Astounding">Premio <i>Astounding</i></a>
-              </li>
-            </ul>
-            <li>Imágenes e iconos empleados</li>
-            <ul>
-              <li>
-                <a href="https://icons8.com/icon/11389/astronaut" title="Icono de astronauta usado en la página">Icono de astronauta</a> por <a href="https://icons8.com" title="Web donde obtener iconos gratuitos llamada Icons8">Icons8</a>.
-              </li>
-              <li>
-                Fotografía de Andy Weir obtenida en <a href="https://pics.filmaffinity.com/andy_weir-093741872210816-nm_200.jpg" title="Fotografía del autor de Proyecto Hail Mary">filmaffinity</a>.
-              </li>
-              <li>
-                Carátula de la película <cite>Proyecto Hail Mary</cite> obtenida en <a href="https://pics.filmaffinity.com/project_hail_mary-366657509-mmed.jpg" title="Portada de la película Proyecto Hail Mary">filmaffinity</a>.
-              </li>           
-            </ul>
-          </ul>
+        <include src="./views/bibliografia.html"></include>
+
     </main>
 
     <!-- Pie de página -->
@@ -169,29 +140,3 @@
   </body>
 
 </html>
-
-<!--
-<div class="uoc-container">
-      <picture>
-        <source
-          srcset="./assets/images/logo.png?as=webp&width=350"
-          type="image/webp"
-        />
-        <img
-          src="./assets/images/logo.png?width=350"
-          alt="Universitat Oberta de Catalunya"
-          class="uoc-logo"
-        />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script>
-
--->
