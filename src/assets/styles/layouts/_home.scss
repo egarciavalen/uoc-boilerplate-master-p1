@@ -5,6 +5,38 @@
 }
 
 
+.animation {
+  display: flex;
+}
+
+.animation-left {
+  animation-duration: 4s;
+  animation-name: slideIn-left;
+}
+
+.animation-right {
+  animation-duration: 4s;
+  animation-name: slideIn-right;
+}
+
+@keyframes slideIn-left {
+  0% { 
+    transform: translateX(-100%); 
+  }
+  100%  { 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes slideIn-right {
+  0% { 
+    transform: translateX(100%); 
+  }
+  100%  { 
+    transform: translateX(0); 
+  }
+}
+
 /**
 
 * {
