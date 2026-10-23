@@ -2,6 +2,7 @@
 
 /* Propios de la aplicación */
 @use "../variables";
+@use "../functions";
 @use "../reset";
 /* Importados de Sass */
 @use 'sass:math';
@@ -254,6 +255,9 @@ section p, .section_nested_ul {
   margin-top: 1rem;
   /* Modificación del alto por defecto entre párrafos para facilitar la lectura */
   line-height:1.5em;
+  margin-left: 1rem;
+  /* Tamaño de fuente */
+  font-size: 1rem;
 }
 
 .section_inside_nested_li::before {
@@ -295,6 +299,7 @@ footer {
   background-color: black;
   /* Alineación del texto */
   text-align: center;
+  padding: 1rem;
 }
 
 footer p {

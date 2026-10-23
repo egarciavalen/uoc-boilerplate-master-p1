@@ -1,0 +1,6 @@
+/* Sass: funciones */
+
+@function getMillionsKilometersByLightyears($lightyears) {
+  // Uso de un operador: *
+  @return math.ceil($lightyears * 9460730);
+}
