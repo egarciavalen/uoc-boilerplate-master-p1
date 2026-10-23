@@ -12,9 +12,9 @@
 
 @mixin star_background() {
   /* Fondo empleado para simular un espacio de puntos */
-  background-image: radial-gradient(5% 5%, white 99%, black);
+  background-image: variables.$star-background-image;
   /* Con esta propiedad se definen las veces que se repetirán el patrón */
-  background-size: 0.8rem 0.8rem;  
+  background-size: variables.$star-background-size;
 }
 
 @mixin flex_center($direction: row) {
@@ -43,12 +43,16 @@ html {
   /* Fuente de letra */
   font-family: variables.$font-family-serif;
   /* Color de fondo */
-  background: variables.$general-background-color;
+  background: variables.$html-background-color;
   /* Eliminar el contenido horizontal que se desborda (en este contexto no habrá pérdida de información) */
   overflow-x: hidden;
 }
 
 /* GESTIÓN DE LOS TÍTULOS, TEXTO Y OTROS ELEMENTOS GENERALES */
+
+h1, h2, h3, p, ul {
+  color: variables.$secondary-color;
+}
 
 h1 {
   /* Tamaño de fuente */
@@ -56,12 +60,10 @@ h1 {
   /* Colocación del título */
   margin-top: 2rem;
   margin-bottom: 1rem;
-  /* Color del título */
-  color: white;
   /* Sirve para que se lea mejor frente al fondo con puntos */
   background: black;
   /* Borde sólido blanco */
-  border: 1px white solid;
+  border: 0.2rem white solid;
   /* Margen interno */
   padding: 0.8rem;
   /* Cambio del estilo de texto */
@@ -73,8 +75,6 @@ h2 {
   font-size: variables.$h2-font-size;
   /* Margen inferior con el texto de abajo */
   margin-bottom: 1rem;
-  /* Color del título */
-  color: white;
 }
 
 h3 {
@@ -83,8 +83,6 @@ h3 {
   /* Márgenes de separación con los iconos*/
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  /* Color del texto */
-  color: white;
 }
 
 p {
@@ -92,30 +90,25 @@ p {
   font-size: variables.$p-font-size;
   /* Altura entre las líneas de los párrafos*/
   line-height:1.5em;
-  /* Color del texto */
-  color: white;
-
 }
 
 a {
   /* Elimina la raya inferior */
   text-decoration: none;
   /* Aplicación del color + color de fondo */
-  color: white;
-  background-color: black;
+  color: variables.$secondary-color;
+  background-color: variables.$primary-color;
   /* Margen interno por defecto */
   padding: 0.1rem;
 }
 
 a:hover {
   /* Al pulsar el ratón por encima, se invertirán los controles */
-  color: black;
-  background-color: white;
+  color: variables.$primary-color;
+  background-color: variables.$secondary-color;
 }
 
 ul {
-  /* Color que tendrán los elementos de una lista */
-  color: white;
   /* Eliminación de los puntos por defecto */
   list-style-type: none;
 }
@@ -149,7 +142,7 @@ ul {
   /* Color de fondo para que no quede mezclado con los puntos */
   background: black;  
   /* Aplicación de un borde blanco sólido */
-  border: 1px white solid;
+  border: 0.2rem white solid;
   /* Margen interno */
   padding: 0.3rem;
 }
@@ -175,7 +168,7 @@ ul {
   margin-top: 1rem;
   margin-bottom: 1rem;
   /* Definición del tamaño que ocupará la imagen */
-  max-width: 10rem;
+  max-width: variables.$img-astronaut-header-max-width;
   /* Animación que se aplica a la imagen */
   @include animation(5s, show_animation_appear);
 }
@@ -190,7 +183,7 @@ section {
   /* Radio del borde de las secciones */
   border-radius: 1rem;
   /* Ancho que ocupará cada sección */
-  max-width: 90%;
+  max-width: variables.$section-max-width;
 }
 
 section header {
@@ -200,8 +193,17 @@ section header {
 }
 
 .section_header_img {
-  /* Definición del tamaño que tendrá cada imagen */
-  max-width: 2rem;
+  /* Definición del tamaño que tendrá el icono relacionado con el espacio */
+  max-width: variables.$img-section-header-max-width;
+  /* Para que se pueda ver el icono relacionado con el espacio */
+  background-color: white;
+  /* Redondear el icono relacionado con el espacio */
+  border-radius: 1rem;
+}
+
+.section_content_img {
+  /* Definición del tamaño que tendrá el icono relacionado con el espacio */
+  max-width: variables.$img-section-content-max-width;
 }
 
 
@@ -218,16 +220,9 @@ section p, .section_nested_ul {
   @include flex_center();
 }
 
-.section_content_header img {
-  /* Para que se pueda ver el icono relacionado con el espacio */
-  background-color: white;
-  /* Redondear el icono relacionado con el espacio */
-  border-radius:1rem;
-}
-
 .section_content_text {
   /* Color de fondo de las secciones */
-  background-color: rgb(72, 7, 148);
+  background-color: variables.$tertiary-color;
   /* Bordes inferiores redondeados */
   border-bottom-left-radius: 0.8rem;
   border-bottom-right-radius: 0.8rem;
@@ -289,14 +284,14 @@ figure figcaption {
   /* Tamaño de letra */
   font-size: 0.8em;
   /* Color */
-  color: white;
+  color: variables.$secondary-color;
 }
 
 /* PIE DE PÁGINA */
 
 footer {
   /* Color de fondo */
-  background-color: black;
+  background-color: variables.$primary-color;
   /* Alineación del texto */
   text-align: center;
   padding: 1rem;
@@ -312,21 +307,21 @@ footer img {
   margin-top: 1rem;
   margin-bottom: 1rem;
   /* Ancho que ocupará la imagen */
-  max-width:50%;
+  max-width:variables.$img-footer-uoc-max-width;
   /* Color de fondo para que se pueda leer el logo */
   background-color: white;
 }
 
 footer a {
   /* En el footer se invertirán los colores */
-  color: black;
-  background-color: white;
+  color: variables.$primary-color;
+  background-color: variables.$secondary-color;
 }
 
 footer a:hover {
   /* En el footer se invertirán los colores */
-  color: white;
-  background-color: black;
+  color: variables.$secondary-color;
+  background-color: variables.$primary-color;
 }
 
 
@@ -363,7 +358,7 @@ footer a:hover {
 /* OTROS ELEMENTOS */
 
 .circle {
-  clip-path: circle(35%);
+  clip-path: circle(variables.$circle-clip-path);
 }
 
 .show_kilometers::after {
