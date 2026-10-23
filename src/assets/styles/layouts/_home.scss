@@ -1,27 +1,208 @@
+/* Módulos Sass importados */
 @use "../variables";
+@use "../reset";
+
+/* Como base, se parte de un diseño móvil */
+
+html {
+  /* Fuente de letra */
+  font-family: variables.$font-family-serif;
+  /* Color de fondo */
+  background: variables.$general-background-color;
+  /* Eliminar el contenido horizontal que se desborda (en este contexto no habrá pérdida de información) */
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: variables.$h1-font-size;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background: black;
+  border: 1px white solid;
+  padding: 0.8rem;
+    font-style: italic;
+
+}
+
+
+h2 {
+  font-size: variables.$h2-font-size;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: variables.$h3-font-size;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+p {
+  font-size: variables.$p-font-size;
+  line-height:1.5em;
+}
+
+
+.header_top{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: radial-gradient(5% 5%, white 99%, black);
+  background-size: 0.9rem 0.9rem;  
+
+  padding-bottom: 0.5rem;
+}
+
+.navigation ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* Eliminar los puntos de la lista */
+  list-style-type: none;
+}
+
+.navigation ul li {
+  margin: 1rem;
+}
+
+.navigation ul a {
+  color: white;
+  text-decoration: none;
+  background: black;  
+  border: 1px white solid;
+  padding: 0.3rem;
+}
+.navigation ul a:hover {
+  color: black;
+  background-color: white;
+}
+
+
+.align_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left:1rem;
+  margin-right:1rem;
+}
+
+.header_main {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header_main h2, .header_main p {
+  text-align: center;
+  color: white;
+}
+
+.header_main img {
+  margin-top: 1rem;
+  max-width: 10rem;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  animation-duration: 5s;
+  animation-name: aparecer;
+}
+
+section {
+  background-image: radial-gradient(5% 5%, white 99%, black);
+  background-size: 0.9rem 0.9rem;  
+  color: white;
+  margin-bottom: 2rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+
+  animation-duration: 4s;
+  animation-name: slideIn-left;
+
+  max-width: 50%;
+}
+
+section header {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+section img {
+  max-width: 2rem;
+  fill: white;
+}
+
+section p, section ul {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 
 .circle {
   clip-path: circle(35%);
 }
 
+.section_content_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 1rem;
+}
+
+.section_content_header img {
+  background-color: white;
+  border-radius:1rem;
+}
+
+.section_content_text {
+  background-color: rgb(72, 7, 148);
+  color: white;
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
 
 .animation {
   display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.animation p {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;  
 }
 
 .animation-left {
   animation-duration: 4s;
   animation-name: slideIn-left;
+
 }
 
 .animation-right {
   animation-duration: 4s;
   animation-name: slideIn-right;
+
 }
+
+@keyframes aparecer {
+  0% { 
+    opacity: 0; 
+  }
+  100% { 
+    opacity: 1;
+  }
+}
+
 
 @keyframes slideIn-left {
   0% { 
-    transform: translateX(-100%); 
+    transform: translateX(-80%); 
   }
   100%  { 
     transform: translateX(0); 
@@ -37,66 +218,87 @@
   }
 }
 
-/**
-
-* {
-  box-sizing: border-box;
-}
-
-body {
+figure {
+  padding-top: 1rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  height: 100vh;
-  margin: 0;
-  padding: 2rem;
-  font-family: variables.$font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: variables.$uoc-bg;
-  color: variables.$uoc-corporate;
+}
+
+figure img {
+  max-width: 8rem;
+  border: 0.2rem black solid;
+  border-radius: 1rem;
+}
+
+figure figcaption {
+  margin: 1rem;
+  font-size: 0.8em;
 }
 
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
+section ul {
+    /* Eliminar los puntos de la lista */
+  list-style-type: none;
+}
+
+section ul {
+    /* Eliminar los puntos de la lista */
+  list-style-type: none;
+}
+
+.bibliografia_title {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+section ul li ul {
+  width: 100%;
+}
+
+.bibliografia_apartado {
+  line-height:1.5em;
+  margin-top: 1rem;
+}
+
+.bibliografia_apartado::before {
+    /* Uso de un carácter unicode para dar mayor estilo */
+    content: "\025B6";
+}
+
+section a {
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  padding: 0.1rem;
+}
+
+section a:hover {
+  color: black;
+  background-color: white;
+}
+
+footer {
+  background-color: black;
   text-align: center;
-  background-color: #fff;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
 
-  @media (min-width: variables.$mqMinWidth) {
-    max-width: none;
-  }
+footer p {
+  color: white;
+  padding-top: 1rem;
 }
 
-.uoc-title {
-  font-family: variables.$font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: variables.$uoc-corporate;
-
-  @media (min-width: variables.$mqMinWidth) {
-    font-size: 36px;
-  }
+footer img {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width:50%;
+  background-color: white;
 }
-
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
+footer p a {
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  padding: 0.1rem;  
 }
-
-**/

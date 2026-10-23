@@ -1,5 +1,21 @@
 @use "sass:color";
 
+// Sass: uso de variables
+
+$general-background-color: radial-gradient(circle at center, red 0, blue 100%);
+//$secondary-color:;
+//$tertiary-color:;
+
+$primary-color: radial-gradient(circle at center, red 0, blue 100%);
+
+
+$h1-font-size: 2rem;
+$h2-font-size: 1.8rem;
+$h3-font-size: 1.4rem;
+$p-font-size: 1.1rem;
+
+$font-family-serif: Georgia, serif;
+
 /**
 $font-family-sans-serif:
   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",

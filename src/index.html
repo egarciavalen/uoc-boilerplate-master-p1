@@ -25,130 +25,147 @@
   
   <body>
 
-    <!-- Header con el título de la web -->
-    <header>
-      <h1>Proyecto Hail Mary</h1>
-      <nav>
-        <ul>
-          <li><a href="#introduccion">Introducción</a></li>
-          <li><a href="#resenia">Reseña</a></li>
-          <li><a href="#autor">Autor</a></li>
-          <li><a href="#pelicula">Película</a></li>
-          <li><a href="#bibliografia">Bibliografía</a></li>
-        </ul>
-      </nav>
-    </header>
+      <!-- Header con el título de la web -->
+      <header class="header_top">
+        <h1>Proyecto Hail Mary</h1>
+        <nav class="navigation">
+          <ul>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#resenia">Reseña</a></li>
+            <li><a href="#autor">Autor</a></li>
+            <li><a href="#pelicula">Película</a></li>
+            <li><a href="#bibliografia">Bibliografía</a></li>
+          </ul>
+        </nav>
+      </header>
 
     <!-- Contenido principal -->
     <main>
       <article>
-        
-        <!-- Cabecera con el título -->
-        <header>
-          <h2><q>¿Cuántas son dos y dos?</q></h2>
-          <p>Salvando tu hogar a años luz de distancia</p>
 
-          <!-- Uso de una imagen adaptable -->
-          <!-- Técnica de cambio de resolución: Diferentes tamaños-->
-          <img class="circle"
-            srcset="./assets/images/astronaut-11080_640.jpg?as=webp 640w, ./assets/images/astronaut-11080_1280.jpg?as=webp 1280w"
-            sizes="(width <= 3000px) 640px, 1280px" src="./assets/images/astronaut-11080_640.jpg?as=webp"
-            alt="Astronauta en el espacio" />
-  
-        </header>
+        <div class="align_content">
 
-        <!-- Introducción -->
-        <section id="introduccion">
-          <header>
-            <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
-            <h3>Introducción</h3>
-          </header>
-          <p>
-            Cuando pensamos en literatura espacial, es normal que se nos venga a la cabeza escenas de fantasía y situaciones que son imposibles que se produzcan en la vida real. 
-            La pregunta es, ¿se podría crear una historia espacial partiendo del conocimiento que tenemos a día de hoy? ¿Sería posible, incluso, poder viajar a millones de kilómetros a distancia
-            de nuestro planeta en una misión desesperada si las condiciones se cumplieran? Precisamente de esto va esta historia centrada en cómo un hombre consigue salvar a la humanidad y la Tierra.
-          </p>
-        </section>
+          <!-- Cabecera con el título -->
+          <header class="header_main">
+            <h2><q>¿Cuántas son dos y dos?</q></h2>
+            <p>Salvando tu hogar a años luz de distancia</p>
 
-        <!-- Reseña -->
-        <section id="resenia">
-          <header>
-            <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
-            <h3>Reseña (sin spoilers)</h3>
-          </header>
-          <p>
-            Personalmente, desconocía de la existencia de este libro hasta que me lo llegaron a recomendar. Cuando abrí las primeras páginas pensé que iba a ser el caso con otras historias 
-            como por ejemplo Star Wars, las cuales optan por el uso de magia y tecnología futurista para justificar los viajes espaciales.
-          </p>
-          <p>
-            Por esa razón, quedé gratamente sorprendido al leer cómo no solamente este libro está basado en tecnología existente a día de hoy 
-            (con una matización importante que no revelaré por spoilers), sino que además te explican todas las decisiones que los personajes toman respecto al funcionamiento de la nave.
-            Creo que esto es lo que diferencia a este libro de otras historias espaciales.
-          </p>
-          <p>
-            Me ha parecido muy interesante de principio a fin; con explicaciones que no se hicieron en absoluto pesadas de leer y momentos muy tensos donde no podía dejar de leer página tras página.
-            Ryland Grace me pareció un muy buen protagonista con el que puedes empatizar con los problemas que se va encontrando en su travesía por el espacio.
-          </p>
-          <p>
-            Si te gusta leer y te llama la atención o te lo llegaron a mencionar, ¡te recomiendo este libro!
-          </p>
-        </section>
-
-        <div class="animation">
-          <div class="animation-left">
-            <!-- Autor -->
-            <section id="autor">
-              <header>
-                <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
-                <h3>Autor</h3>
-              </header>
-              <figure>
-                <img src="./assets/images/andy_weir.jpg?as=webp" alt="Autor del libro Proyecto Hail Mary" >
-                <figcaption>Autor del libro <cite>Proyecto Hail Mary</cite></figcaption>
-              </figure>
-              <p>
-                Andy Weir es un ingeniero informático y escritor de novelas exitosas, entre las que destacan <cite>Artemisa</cite>, <cite>El marciano</cite> y <cite>Proyecto Hail Mary</cite>.
-              </p>
-              <p>
-                Su pasión por el espacio le ha permitido crear obras capaces de conseguir adaptaciones cinematográficas y múltiples premios, entre los que se podrían destacar el Premio Seiun a la mejor novela extranjera (2015 y 2022) y el Premio Astounding (2016).
-              </p>
-              <p>
-                Su página web oficial es la siguiente: <a href="https://andyweirauthor.com/" title="Contenido oficial sobre Andy Weir">Andy Weir</a>
-              </p>
-            </section>
-          </div>
-
-          <!-- Película -->
-          <div class="animation-right">
-            <section id="pelicula">
-              <header>
-                <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
-                <h3>Película</h3>
-              </header>
-              <figure>
-                <img src="./assets/images/hail_mary_pelicula.jpg?as=webp" alt="Carátula de la película Proyecto Hail Mary" >
-                <figcaption>Portada de la película <cite>Proyecto Hail Mary</cite></figcaption>
-              </figure>
-              <p>
-                El libro ha recibido una adaptación cinematográfica dirigida por Phil Lord y Christopher Miller, escrita por Drew Goddard (adaptando el libro a un formato cinematográfico) 
-                y protagonizada por Ryan Gosling y Sandra Hüller.
-              </p>
-              <p>
-                Creo que es una buena adaptación. Las escenas del espacio son visualmente preciosas y me gustaron ciertas libertades creativas que se tomaron respecto al libro. Dicho esto, creo 
-                que el libro explica bastante mejor lo que está pasando y se pierden muchas escenas de introspección de Ryland Grace, por lo que personalmente recomendaría 
-                primero leer el libro antes de ver la película.
-              </p>
-              <p>
-                En el momento de escribir esta reseña tiene un 7,2 en la página web de <a href="https://www.filmaffinity.com/es/film240424.html" title="Página de Proyecto Hail Mary en filmaffinity">filmaffinity</a>.
-              </p>
-            </section>
-          </div>
-
-        </div>
+            <!-- Uso de una imagen adaptable -->
+            <!-- Técnica de cambio de resolución: Diferentes tamaños-->
+            <img class="circle"
+              srcset="./assets/images/astronaut-11080_640.jpg?as=webp 640w, ./assets/images/astronaut-11080_1280.jpg?as=webp 1280w"
+              sizes="(width <= 3000px) 640px, 1280px" src="./assets/images/astronaut-11080_640.jpg?as=webp"
+              alt="Astronauta en el espacio" />
     
-        <!-- Bibliografía -->
-        <include src="./views/bibliografia.html"></include>
+          </header>
 
+          <!-- Introducción -->
+          <section id="introduccion" class="animation-left">
+            <header>
+              <div class="section_content_header">
+                <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                <h3>Introducción</h3>
+                <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+              </div>
+            </header>
+            <div class="section_content_text">
+              <p>
+                Cuando pensamos en literatura espacial, es normal que se nos venga a la cabeza escenas de fantasía y situaciones que son imposibles que se produzcan en la vida real. 
+                La pregunta es, ¿se podría crear una historia espacial partiendo del conocimiento que tenemos a día de hoy? ¿Sería posible, incluso, poder viajar a millones de kilómetros a distancia
+                de nuestro planeta en una misión desesperada si las condiciones se cumplieran? </p>
+              <p>
+                Precisamente de esto va esta historia centrada en cómo un hombre consigue salvar a la humanidad y la Tierra.
+              </p>
+            </div>
+          </section>
+
+          <!-- Reseña -->
+          <section id="resenia" class="animation-right">
+            <header>
+                <div class="section_content_header">
+                  <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                  <h3>Reseña (sin spoilers)</h3>
+                  <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                </div>
+            </header>
+
+            <div class="section_content_text"> 
+              <p>
+                Personalmente, desconocía de la existencia de este libro hasta que me lo llegaron a recomendar. Cuando abrí las primeras páginas pensé que iba a ser el caso con otras historias 
+                como por ejemplo Star Wars, las cuales optan por el uso de magia y tecnología futurista para justificar los viajes espaciales.
+              </p>
+              <p>
+                Por esa razón, quedé gratamente sorprendido al leer cómo no solamente este libro está basado en tecnología existente a día de hoy 
+                (con una matización importante que no revelaré por spoilers), sino que además te explican todas las decisiones que los personajes toman respecto al funcionamiento de la nave.
+                Creo que esto es lo que diferencia a este libro de otras historias espaciales.
+              </p>
+              <p>
+                Me ha parecido muy interesante de principio a fin; con explicaciones que no se hicieron en absoluto pesadas de leer y momentos muy tensos donde no podía dejar de leer página tras página.
+                Ryland Grace me pareció un muy buen protagonista con el que puedes empatizar con los problemas que se va encontrando en su travesía por el espacio.
+              </p>
+              <p>
+                Si te gusta leer y te llama la atención o te lo llegaron a mencionar, ¡te recomiendo este libro!
+              </p>
+            </div>
+          </section>
+
+          <!-- Autor -->
+          <section id="autor" class="animation-left">
+            <header>
+                <div class="section_content_header">
+                  <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                  <h3>Autor</h3>
+                  <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                </div>
+              </header>
+              <div class="section_content_text"> 
+                <figure>
+                  <img src="./assets/images/andy_weir.jpg?as=webp" alt="Autor del libro Proyecto Hail Mary" >
+                  <figcaption>Autor del libro <cite>Proyecto Hail Mary</cite></figcaption>
+                </figure>
+
+                <p>
+                  Andy Weir es un ingeniero informático y escritor de novelas exitosas, entre las que destacan <cite>Artemisa</cite>, <cite>El marciano</cite> y <cite>Proyecto Hail Mary</cite>.
+                </p>
+                <p>
+                  Su pasión por el espacio le ha permitido crear obras capaces de conseguir adaptaciones cinematográficas y múltiples premios, entre los que se podrían destacar el Premio Seiun a la mejor novela extranjera (2015 y 2022) y el Premio Astounding (2016).
+                </p>
+                <p>
+                  Su página web es la siguiente: <a href="https://andyweirauthor.com/" title="Contenido oficial sobre Andy Weir">Andy Weir</a>
+                </p>
+              </div>
+            </section>
+
+            <!-- Película -->
+            <section id="pelicula" class="animation-right">
+              <header>
+                  <div class="section_content_header"> 
+                    <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                    <h3>Película</h3>
+                    <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                  </div>
+                </header>
+                <div class="section_content_text"> 
+                  <figure>
+                    <img src="./assets/images/hail_mary_pelicula.jpg?as=webp" alt="Carátula de la película Proyecto Hail Mary" >
+                    <figcaption>Portada de la película <cite>Proyecto Hail Mary</cite></figcaption>
+                  </figure>
+
+                  <p>
+                    El libro ha recibido una adaptación cinematográfica dirigida por Phil Lord y Christopher Miller, escrita por Drew Goddard (adaptando el libro a un formato cinematográfico) 
+                    y protagonizada por Ryan Gosling y Sandra Hüller.
+                  </p>
+                  <p>
+                    Creo que es una buena adaptación. Las escenas del espacio son visualmente preciosas y me gustaron ciertas libertades creativas que se tomaron respecto al libro. Dicho esto, creo 
+                    que el libro explica bastante mejor lo que está pasando y se pierden muchas escenas de introspección de Ryland Grace, por lo que personalmente recomendaría 
+                    primero leer el libro.
+                  </p>
+                </div>
+              </section>
+          <!-- Bibliografía -->
+          <include src="./views/bibliografia.html"></include>
+        </div>
+      </article>
     </main>
 
     <!-- Pie de página -->
