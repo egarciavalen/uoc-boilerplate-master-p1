@@ -4,6 +4,7 @@
 
 /* Como base, se parte de un diseño móvil */
 
+/* GENERAL A TODO EL DOCUMENTO */
 html {
   /* Fuente de letra */
   font-family: variables.$font-family-serif;
@@ -13,184 +14,308 @@ html {
   overflow-x: hidden;
 }
 
+
+/* GESTIÓN DE LOS TÍTULOS, TEXTO Y OTROS ELEMENTOS GENERALES */
+
 h1 {
+  /* Tamaño de fuente */
   font-size: variables.$h1-font-size;
+  /* Colocación del título */
   margin-top: 2rem;
   margin-bottom: 1rem;
+  /* Color del título */
+  color: white;
+  /* Sirve para que se lea mejor frente al fondo con puntos */
   background: black;
+  /* Borde sólido blanco */
   border: 1px white solid;
+  /* Margen interno */
   padding: 0.8rem;
-    font-style: italic;
-
+  /* Cambio del estilo de texto */
+  font-style: italic;
 }
 
-
 h2 {
+  /* Tamaño de fuente */
   font-size: variables.$h2-font-size;
+  /* Margen inferior con el texto de abajo */
   margin-bottom: 1rem;
+  /* Color del título */
+  color: white;
 }
 
 h3 {
+  /* Tamaño de fuente */
   font-size: variables.$h3-font-size;
+  /* Márgenes de separación con los iconos*/
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  /* Color del texto */
+  color: white;
 }
 
 p {
+  /* Tamaño de fuente */
   font-size: variables.$p-font-size;
+  /* Altura entre las líneas de los párrafos*/
   line-height:1.5em;
-}
-
-
-.header_top{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* Color del texto */
   color: white;
-  background-image: radial-gradient(5% 5%, white 99%, black);
-  background-size: 0.9rem 0.9rem;  
 
-  padding-bottom: 0.5rem;
 }
 
-.navigation ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  /* Eliminar los puntos de la lista */
-  list-style-type: none;
-}
-
-.navigation ul li {
-  margin: 1rem;
-}
-
-.navigation ul a {
-  color: white;
+a {
+  /* Elimina la raya inferior */
   text-decoration: none;
-  background: black;  
-  border: 1px white solid;
-  padding: 0.3rem;
+  /* Aplicación del color + color de fondo */
+  color: white;
+  background-color: black;
+  /* Margen interno por defecto */
+  padding: 0.1rem;
 }
-.navigation ul a:hover {
+
+a:hover {
+  /* Al pulsar el ratón por encima, se invertirán los controles */
   color: black;
   background-color: white;
 }
 
+ul {
+  /* Color que tendrán los elementos de una lista */
+  color: white;
+  /* Eliminación de los puntos por defecto */
+  list-style-type: none;
+}
 
-.align_content {
+/* CABECERA Y MENÚ DE NAVEGACIÓN GENERAL */ 
+
+.body_header{
+  /* Flex para poder colocar los elementos en columna */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Fondo empleado para simular un espacio de puntos */
+  background-image: radial-gradient(5% 5%, white 99%, black);
+  background-size: 0.9rem 0.9rem;  
+  /* Margen interno inferior adicional */
+  padding-bottom: 0.5rem;
+}
+
+.body_header_navigation ul {
+  /* El menú de navegación central aplicará flex para poder colocar los elementos en una misma fila */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* Esto evitará un "overflow" en caso de que no encaje en la misma línea */
+  flex-wrap: wrap;
+  /* La navegación general NO usará puntos  */
+  list-style-type: none;
+}
+
+.body_header_navigation ul li {
+  /* Margen de cada uno de los elementos de navegación general */
+  margin: 1rem;
+}
+
+.body_header_navigation ul a {
+  /* Color de fondo para que no quede mezclado con los puntos */
+  background: black;  
+  /* Aplicación de un borde blanco sólido */
+  border: 1px white solid;
+  /* Margen interno */
+  padding: 0.3rem;
+}
+
+/* ARTÍCULO */
+
+.article_align {
+  /* Flex para poder centrar los elementos */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-left:1rem;
-  margin-right:1rem;
 }
 
-.header_main {
-  margin-top: 2rem;
+.article_header {
+  /* Flex para poder centrar los elementos */
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-.header_main h2, .header_main p {
+  /* Margen externo superior con la navegación general */
+  margin-top: 2rem;
+  /* Alineación del texto */
   text-align: center;
-  color: white;
 }
 
-.header_main img {
+.article_header img {
+  /* Separación con el texto de arriba y las secciones de abajo */
   margin-top: 1rem;
-  max-width: 10rem;
-  align-items: center;
   margin-bottom: 1rem;
-
+  /* Definición del tamaño que ocupará la imagen */
+  max-width: 10rem;
+  /* Animación que se aplica a la imagen */
   animation-duration: 5s;
-  animation-name: aparecer;
+  animation-name: show;
 }
 
 section {
+  /* Fondo empleado para simular un espacio de puntos */
   background-image: radial-gradient(5% 5%, white 99%, black);
   background-size: 0.9rem 0.9rem;  
-  color: white;
+  /* Margen inferior entre secciones*/
   margin-bottom: 2rem;
-  border: 2px solid black;
+  /* Borde de las secciones */
+  border: 0.15rem solid black;
+  /* Radio del borde de las secciones */
   border-radius: 1rem;
-
-  animation-duration: 4s;
-  animation-name: slideIn-left;
-
-  max-width: 50%;
+  /* Ancho que ocupará cada sección */
+  max-width: 90%;
 }
 
 section header {
+  /* Márgenes superior e inferior para que se lea mejor */
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-section img {
+
+.section_header_img {
+  /* Definición del tamaño que tendrá cada imagen */
   max-width: 2rem;
-  fill: white;
 }
 
-section p, section ul {
+
+section p, .section_nested_ul {
+  /* Márgenes internos del texto y las listas dentro de las secciones */
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-.circle {
-  clip-path: circle(35%);
-}
-
 .section_content_header {
+  /* Flex para colocar los elmentos centrados en línea */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  border-radius: 1rem;
 }
 
 .section_content_header img {
+  /* Para que se pueda ver el icono relacionado con el espacio */
   background-color: white;
+  /* Redondear el icono relacionado con el espacio */
   border-radius:1rem;
 }
 
 .section_content_text {
+  /* Color de fondo de las secciones */
   background-color: rgb(72, 7, 148);
-  color: white;
+  /* Bordes inferiores redondeados */
   border-bottom-left-radius: 0.8rem;
   border-bottom-right-radius: 0.8rem;
 }
 
-.animation {
+.section_animation_left {
+  /* Animación que mostrará el bloque saliendo por la izquierda */
+  animation-duration: 4s;
+  animation-name: show-left;
+}
+
+.section_animation_right {
+  /* Animación que mostrará el bloque saliendo por la derecha */
+  animation-duration: 4s;
+  animation-name: show-right;
+
+}
+
+.section_nested_li {
+  /* Margen superior respecto a la cabecera de la sección */
+  margin-top: 1rem;
+  /* Incremento del tamaño de fuente para que haya diferencia respecto a las respectivas listas internas*/
+  font-size: 1.2rem;
+}
+
+.section_inside_nested_li {
+  /* Margen superior para que se lea mejor cada apartado */
+  margin-top: 1rem;
+  /* Modificación del alto por defecto entre párrafos para facilitar la lectura */
+  line-height:1.5em;
+}
+
+.section_inside_nested_li::before {
+  /* En vez del punto tradicional, se aplica un carácter unicode */
+  content: "\025B6";
+}
+
+/* FIGURAS */
+
+figure {
+  /* Flex para centrar los elementos */
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  align-items: center;
+  flex-direction: column;
+  /* Margen inferior superior para que no quede pegado a la cabecera */
+  padding-top: 1rem;
 }
 
-.animation p {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;  
+figure img {
+  /* Ancho máximo que ocupará la imagen */
+  max-width: 8rem;
+  /* Bordes de la imagen */
+  border: 0.2rem black solid;
+  border-radius: 1rem;
 }
 
-.animation-left {
-  animation-duration: 4s;
-  animation-name: slideIn-left;
-
+figure figcaption {
+  /* Separación con la imagen y el resto del texto */
+  margin: 1rem;
+  /* Tamaño de letra */
+  font-size: 0.8em;
+  /* Color */
+  color: white;
 }
 
-.animation-right {
-  animation-duration: 4s;
-  animation-name: slideIn-right;
+/* PIE DE PÁGINA */
 
+footer {
+  /* Color de fondo */
+  background-color: black;
+  /* Alineación del texto */
+  text-align: center;
 }
 
-@keyframes aparecer {
+footer p {
+  /* Separación superior entre párrafos */
+  padding-top: 1rem;
+}
+
+footer img {
+  /* Separación de la imagen del resto de contenido */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  /* Ancho que ocupará la imagen */
+  max-width:50%;
+  /* Color de fondo para que se pueda leer el logo */
+  background-color: white;
+}
+
+footer a {
+  /* En el footer se invertirán los colores */
+  color: black;
+  background-color: white;
+}
+
+footer a:hover {
+  /* En el footer se invertirán los colores */
+  color: white;
+  background-color: black;
+}
+
+
+/* ANIMACIONES */
+
+@keyframes show {
   0% { 
     opacity: 0; 
   }
@@ -200,7 +325,7 @@ section p, section ul {
 }
 
 
-@keyframes slideIn-left {
+@keyframes show-left {
   0% { 
     transform: translateX(-80%); 
   }
@@ -209,7 +334,7 @@ section p, section ul {
   }
 }
 
-@keyframes slideIn-right {
+@keyframes show-right {
   0% { 
     transform: translateX(100%); 
   }
@@ -218,87 +343,8 @@ section p, section ul {
   }
 }
 
-figure {
-  padding-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+/* OTROS ELEMENTOS */
 
-figure img {
-  max-width: 8rem;
-  border: 0.2rem black solid;
-  border-radius: 1rem;
-}
-
-figure figcaption {
-  margin: 1rem;
-  font-size: 0.8em;
-}
-
-
-section ul {
-    /* Eliminar los puntos de la lista */
-  list-style-type: none;
-}
-
-section ul {
-    /* Eliminar los puntos de la lista */
-  list-style-type: none;
-}
-
-.bibliografia_title {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-}
-
-section ul li ul {
-  width: 100%;
-}
-
-.bibliografia_apartado {
-  line-height:1.5em;
-  margin-top: 1rem;
-}
-
-.bibliografia_apartado::before {
-    /* Uso de un carácter unicode para dar mayor estilo */
-    content: "\025B6";
-}
-
-section a {
-  color: white;
-  background-color: black;
-  text-decoration: none;
-  padding: 0.1rem;
-}
-
-section a:hover {
-  color: black;
-  background-color: white;
-}
-
-footer {
-  background-color: black;
-  text-align: center;
-}
-
-
-footer p {
-  color: white;
-  padding-top: 1rem;
-}
-
-footer img {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  width:50%;
-  background-color: white;
-}
-footer p a {
-  color: white;
-  background-color: black;
-  text-decoration: none;
-  padding: 0.1rem;  
+.circle {
+  clip-path: circle(35%);
 }

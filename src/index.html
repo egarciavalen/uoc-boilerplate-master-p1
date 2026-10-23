@@ -26,15 +26,15 @@
   <body>
 
       <!-- Header con el título de la web -->
-      <header class="header_top">
+      <header class="body_header">
         <h1>Proyecto Hail Mary</h1>
-        <nav class="navigation">
+        <nav class="body_header_navigation">
           <ul>
-            <li><a href="#introduccion">Introducción</a></li>
-            <li><a href="#resenia">Reseña</a></li>
-            <li><a href="#autor">Autor</a></li>
-            <li><a href="#pelicula">Película</a></li>
-            <li><a href="#bibliografia">Bibliografía</a></li>
+            <li><a href="#introduction">Introducción</a></li>
+            <li><a href="#review">Reseña</a></li>
+            <li><a href="#author">Autor</a></li>
+            <li><a href="#film">Película</a></li>
+            <li><a href="#bibliography">Bibliografía</a></li>
           </ul>
         </nav>
       </header>
@@ -43,10 +43,11 @@
     <main>
       <article>
 
-        <div class="align_content">
+        <!-- Alineación de los contenidos -->
+        <div class="article_align">
 
           <!-- Cabecera con el título -->
-          <header class="header_main">
+          <header class="article_header">
             <h2><q>¿Cuántas son dos y dos?</q></h2>
             <p>Salvando tu hogar a años luz de distancia</p>
 
@@ -54,18 +55,17 @@
             <!-- Técnica de cambio de resolución: Diferentes tamaños-->
             <img class="circle"
               srcset="./assets/images/astronaut-11080_640.jpg?as=webp 640w, ./assets/images/astronaut-11080_1280.jpg?as=webp 1280w"
-              sizes="(width <= 3000px) 640px, 1280px" src="./assets/images/astronaut-11080_640.jpg?as=webp"
-              alt="Astronauta en el espacio" />
-    
+              sizes="(width <= 800px) 640px, 1280px" src="./assets/images/astronaut-11080_640.jpg?as=webp"
+              alt="Astronauta en el espacio" /> 
           </header>
 
           <!-- Introducción -->
-          <section id="introduccion" class="animation-left">
+          <section id="introduction" class="section_animation_left">
             <header>
               <div class="section_content_header">
-                <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                <img class="section_header_img" src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
                 <h3>Introducción</h3>
-                <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                <img class="section_header_img" src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
               </div>
             </header>
             <div class="section_content_text">
@@ -80,12 +80,12 @@
           </section>
 
           <!-- Reseña -->
-          <section id="resenia" class="animation-right">
+          <section id="review" class="section_animation_right">
             <header>
                 <div class="section_content_header">
-                  <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                  <img class="section_header_img" src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
                   <h3>Reseña (sin spoilers)</h3>
-                  <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                  <img class="section_header_img" src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
                 </div>
             </header>
 
@@ -110,12 +110,12 @@
           </section>
 
           <!-- Autor -->
-          <section id="autor" class="animation-left">
+          <section id="author" class="section_animation_left">
             <header>
                 <div class="section_content_header">
-                  <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                  <img class="section_header_img" src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
                   <h3>Autor</h3>
-                  <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                  <img class="section_header_img" src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
                 </div>
               </header>
               <div class="section_content_text"> 
@@ -123,7 +123,6 @@
                   <img src="./assets/images/andy_weir.jpg?as=webp" alt="Autor del libro Proyecto Hail Mary" >
                   <figcaption>Autor del libro <cite>Proyecto Hail Mary</cite></figcaption>
                 </figure>
-
                 <p>
                   Andy Weir es un ingeniero informático y escritor de novelas exitosas, entre las que destacan <cite>Artemisa</cite>, <cite>El marciano</cite> y <cite>Proyecto Hail Mary</cite>.
                 </p>
@@ -137,12 +136,12 @@
             </section>
 
             <!-- Película -->
-            <section id="pelicula" class="animation-right">
+            <section id="film" class="section_animation_right">
               <header>
                   <div class="section_content_header"> 
-                    <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                    <img class="section_header_img" src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
                     <h3>Película</h3>
-                    <img src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
+                    <img class="section_header_img" src="./assets/icons/astronaut-helmet.svg" alt="Casco de astronauta" />
                   </div>
                 </header>
                 <div class="section_content_text"> 
@@ -150,7 +149,6 @@
                     <img src="./assets/images/hail_mary_pelicula.jpg?as=webp" alt="Carátula de la película Proyecto Hail Mary" >
                     <figcaption>Portada de la película <cite>Proyecto Hail Mary</cite></figcaption>
                   </figure>
-
                   <p>
                     El libro ha recibido una adaptación cinematográfica dirigida por Phil Lord y Christopher Miller, escrita por Drew Goddard (adaptando el libro a un formato cinematográfico) 
                     y protagonizada por Ryan Gosling y Sandra Hüller.
@@ -163,7 +161,7 @@
                 </div>
               </section>
           <!-- Bibliografía -->
-          <include src="./views/bibliografia.html"></include>
+          <include src="./views/bibliography.html"></include>
         </div>
       </article>
     </main>
