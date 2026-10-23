@@ -1,6 +1,10 @@
 /* Módulos Sass importados */
+
+/* Propios de la aplicación */
 @use "../variables";
 @use "../reset";
+/* Importados de Sass */
+@use 'sass:math';
 
 
 /* Sass: mixins */
@@ -8,7 +12,8 @@
 @mixin star_background() {
   /* Fondo empleado para simular un espacio de puntos */
   background-image: radial-gradient(5% 5%, white 99%, black);
-  background-size: 0.9rem 0.9rem;  
+  /* Con esta propiedad se definen las veces que se repetirán el patrón */
+  background-size: 0.8rem 0.8rem;  
 }
 
 @mixin flex_center($direction: row) {
@@ -21,6 +26,13 @@
 @mixin animation($duration, $name) {
   animation-duration: $duration;
   animation-name: $name;
+}
+
+/* Sass: funciones */
+
+@function getMillionsKilometersByLightyears($lightyears) {
+  // Uso de un operador: *
+  @return math.ceil($lightyears * 9460730);
 }
 
 /* Como base, se parte de un diseño móvil */
@@ -347,4 +359,10 @@ footer a:hover {
 
 .circle {
   clip-path: circle(35%);
+}
+
+.show_kilometers::after {
+  // Interpolación de variables 
+  // Uso de "" para que se registre el contenido
+  content: "#{getMillionsKilometersByLightyears(11.9)}";
 }
