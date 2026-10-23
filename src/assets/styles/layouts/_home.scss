@@ -2,6 +2,27 @@
 @use "../variables";
 @use "../reset";
 
+
+/* Sass: mixins */
+
+@mixin star_background() {
+  /* Fondo empleado para simular un espacio de puntos */
+  background-image: radial-gradient(5% 5%, white 99%, black);
+  background-size: 0.9rem 0.9rem;  
+}
+
+@mixin flex_center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin animation($duration, $name) {
+  animation-duration: $duration;
+  animation-name: $name;
+}
+
 /* Como base, se parte de un diseño móvil */
 
 /* GENERAL A TODO EL DOCUMENTO */
@@ -13,7 +34,6 @@ html {
   /* Eliminar el contenido horizontal que se desborda (en este contexto no habrá pérdida de información) */
   overflow-x: hidden;
 }
-
 
 /* GESTIÓN DE LOS TÍTULOS, TEXTO Y OTROS ELEMENTOS GENERALES */
 
@@ -90,23 +110,17 @@ ul {
 /* CABECERA Y MENÚ DE NAVEGACIÓN GENERAL */ 
 
 .body_header{
-  /* Flex para poder colocar los elementos en columna */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* Fondo empleado para simular un espacio de puntos */
-  background-image: radial-gradient(5% 5%, white 99%, black);
-  background-size: 0.9rem 0.9rem;  
+  /* Uso de flex */
+  @include flex_center(column);
+  /* Fondo de estrellas */
+  @include star_background();
   /* Margen interno inferior adicional */
   padding-bottom: 0.5rem;
 }
 
 .body_header_navigation ul {
-  /* El menú de navegación central aplicará flex para poder colocar los elementos en una misma fila */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  /* Uso de flex */
+  @include flex_center(row);
   /* Esto evitará un "overflow" en caso de que no encaje en la misma línea */
   flex-wrap: wrap;
   /* La navegación general NO usará puntos  */
@@ -130,18 +144,13 @@ ul {
 /* ARTÍCULO */
 
 .article_align {
-  /* Flex para poder centrar los elementos */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  /* Uso de flex */
+  @include flex_center(column);
 }
 
 .article_header {
-  /* Flex para poder centrar los elementos */
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  /* Uso de flex */
+  @include flex_center(column);
   /* Margen externo superior con la navegación general */
   margin-top: 2rem;
   /* Alineación del texto */
@@ -155,14 +164,12 @@ ul {
   /* Definición del tamaño que ocupará la imagen */
   max-width: 10rem;
   /* Animación que se aplica a la imagen */
-  animation-duration: 5s;
-  animation-name: show;
+  @include animation(5s, show_animation_appear);
 }
 
 section {
-  /* Fondo empleado para simular un espacio de puntos */
-  background-image: radial-gradient(5% 5%, white 99%, black);
-  background-size: 0.9rem 0.9rem;  
+  /* Fondo de estrellas */
+  @include star_background(); 
   /* Margen inferior entre secciones*/
   margin-bottom: 2rem;
   /* Borde de las secciones */
@@ -194,10 +201,8 @@ section p, .section_nested_ul {
 }
 
 .section_content_header {
-  /* Flex para colocar los elmentos centrados en línea */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Uso de flex */
+  @include flex_center();
 }
 
 .section_content_header img {
@@ -217,15 +222,12 @@ section p, .section_nested_ul {
 
 .section_animation_left {
   /* Animación que mostrará el bloque saliendo por la izquierda */
-  animation-duration: 4s;
-  animation-name: show-left;
+  @include animation(4s, show_animation_left);
 }
 
 .section_animation_right {
   /* Animación que mostrará el bloque saliendo por la derecha */
-  animation-duration: 4s;
-  animation-name: show-right;
-
+  @include animation(4s, show_animation_right);
 }
 
 .section_nested_li {
@@ -250,10 +252,8 @@ section p, .section_nested_ul {
 /* FIGURAS */
 
 figure {
-  /* Flex para centrar los elementos */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* Uso de flex */
+  @include flex_center();
   flex-direction: column;
   /* Margen inferior superior para que no quede pegado a la cabecera */
   padding-top: 1rem;
@@ -315,7 +315,7 @@ footer a:hover {
 
 /* ANIMACIONES */
 
-@keyframes show {
+@keyframes show_animation_appear {
   0% { 
     opacity: 0; 
   }
@@ -325,7 +325,7 @@ footer a:hover {
 }
 
 
-@keyframes show-left {
+@keyframes show_animation_left {
   0% { 
     transform: translateX(-80%); 
   }
@@ -334,7 +334,7 @@ footer a:hover {
   }
 }
 
-@keyframes show-right {
+@keyframes show_animation_right {
   0% { 
     transform: translateX(100%); 
   }
