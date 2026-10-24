@@ -55,7 +55,11 @@
 /* GENERAL A TODO EL DOCUMENTO */
 html {
   /* Fuente de letra */
-  font-family: variables.$font-family-serif;
+  font-family: variables.$html-font-family;
+  /* Peso (grosor) de la letra */
+  font-weight: variables.$html-font-weight;
+  /* Estilo aplicado a la letra */
+  font-style: variables.$html-font-style;
   /* Color de fondo */
   background: variables.$html-background-color;
   /* Eliminar el contenido horizontal que se desborda (en este contexto no habrá pérdida de información) */

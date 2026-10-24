@@ -7,7 +7,9 @@ $star-background-image: radial-gradient(5% 5%, white 99%, black);
 $star-background-size: 0.8rem 0.8rem;
 
 // Fuente de letra
-$font-family-serif: Georgia, serif;
+$html-font-family: 'JetBrains Mono Variable', monospace;
+$html-font-weight: 400;
+$html-font-style: normal;
 
 // Colores
 $html-background-color: radial-gradient(circle at center, red 0, blue 100%);

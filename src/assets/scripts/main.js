@@ -14,3 +14,7 @@
   const university = "UOC";
   console.log(`Hello, ${university}!`);
 })();
+
+
+// Importación de la fuente de letra
+import '@fontsource-variable/jetbrains-mono';
