@@ -3,17 +3,17 @@
 <!-- Especificación del idioma -->
 <html lang="es-ES">
   <head>
-    
+
     <!-- Metadatos -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
 
     <!-- Autor/Descripción -->
     <meta name="author" content="Efrén García Valencia">
     <meta name="description" content="Trabajo PC 1 de la asignatura de HTML y CSS II centrado en el libro Proyecto Hail Mary">
 
     <!-- Enlace al CSS -->
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <link rel="stylesheet" href="./assets/styles/main.scss">
 
     <!-- Icono a mostrar en la pestaña -->
     <link rel="shortcut icon" href="./assets/icons/astronaut.svg">
@@ -24,11 +24,10 @@
   
   
   <body>
-
-      <!-- Header con el título de la web -->
-      <header class="body_header">
-        <h1>Proyecto Hail Mary</h1>
-        <nav class="body_header_navigation">
+    <!-- Header con el título de la web -->
+    <header class="body-header">
+      <h1>Proyecto Hail Mary</h1>
+        <nav class="body-header-navigation">
           <ul>
             <li><a href="#introduction">Introducción</a></li>
             <li><a href="#review">Reseña</a></li>
@@ -36,39 +35,39 @@
             <li><a href="#film">Película</a></li>
             <li><a href="#bibliography">Bibliografía</a></li>
           </ul>
-        </nav>
-      </header>
+      </nav>
+    </header>
 
     <!-- Contenido principal -->
     <main>
       <article>
 
         <!-- Alineación de los contenidos -->
-        <div class="article_align">
+        <div class="article-align">
 
           <!-- Cabecera con el título -->
-          <header class="article_header">
+          <header class="article-header">
             <h2><q>¿Cuántas son dos y dos?</q></h2>
-            <p>Salvando tu hogar a <span class="show_kilometers"></span> millones de kiómetros de distancia</p>
+            <p>Salvando tu hogar a <span class="show-kilometers"></span> millones de kiómetros de distancia</p>
 
             <!-- Uso de una imagen adaptable -->
             <!-- Técnica de cambio de resolución: Diferentes tamaños-->
             <img class="circle"
               srcset="./assets/images/astronaut-11080_640.jpg?as=webp 640w, ./assets/images/astronaut-11080_1280.jpg?as=webp 1280w"
               sizes="(width <= 800px) 640px, 1280px" src="./assets/images/astronaut-11080_640.jpg?as=webp"
-              alt="Astronauta en el espacio" /> 
+              alt="Astronauta en el espacio"> 
           </header>
 
           <!-- Introducción -->
-          <section id="introduction" class="section_animation_left">
+          <section class="section-animation-left" id="introduction">
             <header>
-              <div class="section_content_header">
+              <div class="section-content-header">
                 <include src="./views/section_header_svg.html"></include>
                 <h3>Introducción</h3>
                 <include src="./views/section_header_svg.html"></include>
               </div>
             </header>
-            <div class="section_content_text">
+            <div class="section-content-text">
               <p>
                 Cuando pensamos en literatura espacial, es normal que se nos venga a la cabeza escenas de fantasía y situaciones que son imposibles que se produzcan en la vida real. 
                 La pregunta es, ¿se podría crear una historia espacial partiendo del conocimiento que tenemos a día de hoy? ¿Sería posible, incluso, poder viajar a millones de kilómetros a distancia
@@ -80,16 +79,16 @@
           </section>
 
           <!-- Reseña -->
-          <section id="review" class="section_animation_right">
+          <section class="section-animation-right" id="review">
             <header>
-                <div class="section_content_header">
+              <div class="section-content-header">
                   <include src="./views/section_header_svg.html"></include>
                   <h3>Reseña (sin spoilers)</h3>
                   <include src="./views/section_header_svg.html"></include>
                 </div>
             </header>
 
-            <div class="section_content_text"> 
+            <div class="section-content-text"> 
               <p>
                 Personalmente, desconocía de la existencia de este libro hasta que me lo llegaron a recomendar. Cuando abrí las primeras páginas pensé que iba a ser el caso con otras historias 
                 como por ejemplo Star Wars, las cuales optan por el uso de magia y tecnología futurista para justificar los viajes espaciales.
@@ -110,17 +109,17 @@
           </section>
 
           <!-- Autor -->
-          <section id="author" class="section_animation_left">
+          <section class="section-animation-left" id="author">
             <header>
-                <div class="section_content_header">
+                <div class="section-content-header">
                   <include src="./views/section_header_svg.html"></include>
                   <h3>Autor</h3>
                   <include src="./views/section_header_svg.html"></include>
                 </div>
               </header>
-              <div class="section_content_text"> 
+              <div class="section-content-text"> 
                 <figure>
-                  <img class="section_content_img" src="./assets/images/andy_weir.jpg?as=webp" alt="Autor del libro Proyecto Hail Mary" >
+                  <img class="section-content-img" src="./assets/images/andy_weir.jpg?as=webp" alt="Autor del libro Proyecto Hail Mary">
                   <figcaption>Autor del libro <cite>Proyecto Hail Mary</cite></figcaption>
                 </figure>
                 <p>
@@ -136,17 +135,17 @@
             </section>
 
             <!-- Película -->
-            <section id="film" class="section_animation_right">
+            <section class="section-animation-right" id="film">
               <header>
-                  <div class="section_content_header"> 
+                  <div class="section-content-header"> 
                     <include src="./views/section_header_svg.html"></include>
                     <h3>Película</h3>
                     <include src="./views/section_header_svg.html"></include>
                   </div>
                 </header>
-                <div class="section_content_text"> 
+                <div class="section-content-text"> 
                   <figure>
-                    <img class="section_content_img" src="./assets/images/hail_mary_pelicula.jpg?as=webp" alt="Carátula de la película Proyecto Hail Mary" >
+                    <img class="section-content-img" src="./assets/images/hail_mary_pelicula.jpg?as=webp" alt="Carátula de la película Proyecto Hail Mary">
                     <figcaption>Portada de la película <cite>Proyecto Hail Mary</cite></figcaption>
                   </figure>
                   <p>

@@ -12,16 +12,16 @@ $html-font-weight: 400;
 $html-font-style: normal;
 
 // Colores
-$html-background-color: radial-gradient(circle at center, red 0, blue 100%);
+$html-background: radial-gradient(circle at center, red 0, blue 100%);
 $primary-color: black;
 $secondary-color: white;
-$tertiary-color: rgb(72, 7, 148);
+$tertiary-color: #480794;
 
 // Tamaños de letra
 // Se dejan preparadas las variables y las media queries asociadas por si es necesario hacer ajustes
 $h1-font-size-mobile: 1.8rem;
 $h2-font-size-mobile: 1.6rem;
-$h3-font-size-mobile: 1.4rem;
+$h3-font-size-mobile: 1.25rem;
 $p-font-size-mobile: 1.1rem;
 
 $h1-font-size-tablet: 1.8rem;
