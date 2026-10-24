@@ -16,20 +16,42 @@ $secondary-color: white;
 $tertiary-color: rgb(72, 7, 148);
 
 // Tamaños de letra
-$h1-font-size: 1.8rem;
-$h2-font-size: 1.6rem;
-$h3-font-size: 1.4rem;
-$p-font-size: 1.1rem;
+// Se dejan preparadas las variables y las media queries asociadas por si es necesario hacer ajustes
+$h1-font-size-mobile: 1.8rem;
+$h2-font-size-mobile: 1.6rem;
+$h3-font-size-mobile: 1.4rem;
+$p-font-size-mobile: 1.1rem;
+
+$h1-font-size-tablet: 1.8rem;
+$h2-font-size-tablet: 1.6rem;
+$h3-font-size-tablet: 1.4rem;
+$p-font-size-tablet: 1.1rem;
+
+$h1-font-size-computer: 1.8rem;
+$h2-font-size-computer: 1.6rem;
+$h3-font-size-computer: 1.4rem;
+$p-font-size-computer: 1.1rem;
 
 // Ancho de las secciones
-$section-max-width: 90%;
+$section-max-width-mobile: 90%;
+$section-max-width-tablet: 70%;
+$section-max-width-computer: 50%;
 
 // Tamaños de las imágenes
-$img-astronaut-header-max-width: 10rem;
-$img-section-header-max-width: 2rem;
-$img-section-content-max-width: 10rem;
-$img-footer-uoc-max-width: 50%; 
+$img-astronaut-header-max-width-mobile: 10rem;
+$img-section-header-max-width-mobile: 2rem;
+$img-section-content-max-width-mobile: 10rem;
+$img-footer-uoc-max-width-mobile: 50%; 
 
+$img-astronaut-header-max-width-tablet: 15rem;
+$img-section-header-max-width-tablet: 2rem;
+$img-section-content-max-width-tablet: 15rem;
+$img-footer-uoc-max-width-tablet: 60%; 
+
+$img-astronaut-header-max-width-computer: 20rem;
+$img-section-header-max-width-computer: 2rem;
+$img-section-content-max-width-computer: 20rem;
+$img-footer-uoc-max-width-computer: 70%; 
 
 // Porcentaje del recorte del círculo
 $circle-clip-path: 35%; 

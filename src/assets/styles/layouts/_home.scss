@@ -29,6 +29,20 @@
   animation-name: $name;
 }
 
+// Para las media queries
+@mixin tablet {
+  @media screen and (min-width: 700px) and (max-width: 1250px) {
+    // Todos los estilos especificados dentro (@content) se aplica a la media query
+    @content;
+  }
+}
+
+@mixin computer {
+  @media screen and (min-width: 1251px) {
+    @content;
+  }
+}
+
 /* Sass: funciones */
 
 @function getMillionsKilometersByLightyears($lightyears) {
@@ -56,7 +70,7 @@ h1, h2, h3, p, ul {
 
 h1 {
   /* Tamaño de fuente */
-  font-size: variables.$h1-font-size;
+  font-size: variables.$h1-font-size-mobile;
   /* Colocación del título */
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -68,28 +82,64 @@ h1 {
   padding: 0.8rem;
   /* Cambio del estilo de texto */
   font-style: italic;
+
+  // Media queries
+  @include tablet() {
+    font-size: variables.$h1-font-size-tablet;
+  }
+
+  @include computer() {
+    font-size: variables.$h1-font-size-computer;
+  }  
 }
 
 h2 {
   /* Tamaño de fuente */
-  font-size: variables.$h2-font-size;
+  font-size: variables.$h2-font-size-mobile;
   /* Margen inferior con el texto de abajo */
   margin-bottom: 1rem;
+
+  // Media queries
+  @include tablet() {
+    font-size: variables.$h2-font-size-tablet;
+  }
+
+  @include computer() {
+    font-size: variables.$h2-font-size-computer;
+  }  
 }
 
 h3 {
   /* Tamaño de fuente */
-  font-size: variables.$h3-font-size;
+  font-size: variables.$h3-font-size-mobile;
   /* Márgenes de separación con los iconos*/
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+
+  // Media queries
+  @include tablet() {
+    font-size: variables.$h3-font-size-tablet;
+  }
+
+  @include computer() {
+    font-size: variables.$h3-font-size-computer;
+  }  
 }
 
 p {
   /* Tamaño de fuente */
-  font-size: variables.$p-font-size;
+  font-size: variables.$p-font-size-mobile;
   /* Altura entre las líneas de los párrafos*/
   line-height:1.5em;
+
+  // Media queries
+  @include tablet() {
+    font-size: variables.$p-font-size-tablet;
+  }
+
+  @include computer() {
+    font-size: variables.$p-font-size-computer;
+  }  
 }
 
 a {
@@ -168,9 +218,18 @@ ul {
   margin-top: 1rem;
   margin-bottom: 1rem;
   /* Definición del tamaño que ocupará la imagen */
-  max-width: variables.$img-astronaut-header-max-width;
+  max-width: variables.$img-astronaut-header-max-width-mobile;
   /* Animación que se aplica a la imagen */
   @include animation(5s, show_animation_appear);
+
+  // Media queries
+  @include tablet() {
+    max-width: variables.$img-astronaut-header-max-width-tablet;
+  }
+
+  @include computer() {
+    max-width: variables.$img-astronaut-header-max-width-computer;
+  }
 }
 
 section {
@@ -183,7 +242,16 @@ section {
   /* Radio del borde de las secciones */
   border-radius: 1rem;
   /* Ancho que ocupará cada sección */
-  max-width: variables.$section-max-width;
+  max-width: variables.$section-max-width-mobile;
+
+  // Media queries
+  @include tablet() {
+    max-width: variables.$section-max-width-tablet;
+  }
+
+  @include computer() {
+    max-width: variables.$section-max-width-computer;
+  }
 }
 
 section header {
@@ -194,16 +262,34 @@ section header {
 
 .section_header_img {
   /* Definición del tamaño que tendrá el icono relacionado con el espacio */
-  max-width: variables.$img-section-header-max-width;
+  max-width: variables.$img-section-header-max-width-mobile;
   /* Para que se pueda ver el icono relacionado con el espacio */
   background-color: white;
   /* Redondear el icono relacionado con el espacio */
   border-radius: 1rem;
+
+  // Media queries
+  @include tablet() {
+    max-width: variables.$img-section-header-max-width-tablet;
+  }
+
+  @include computer() {
+    max-width: variables.$img-section-header-max-width-computer;
+  }
 }
 
 .section_content_img {
   /* Definición del tamaño que tendrá el icono relacionado con el espacio */
-  max-width: variables.$img-section-content-max-width;
+  max-width: variables.$img-section-content-max-width-mobile;
+
+  // Media queries
+  @include tablet() {
+    max-width: variables.$img-section-content-max-width-tablet;
+  }
+
+  @include computer() {
+    max-width: variables.$img-section-content-max-width-computer;
+  }
 }
 
 
@@ -307,9 +393,18 @@ footer img {
   margin-top: 1rem;
   margin-bottom: 1rem;
   /* Ancho que ocupará la imagen */
-  max-width:variables.$img-footer-uoc-max-width;
+  max-width:variables.$img-footer-uoc-max-width-mobile;
   /* Color de fondo para que se pueda leer el logo */
   background-color: white;
+
+  // Media queries
+  @include tablet() {
+    max-width: variables.$img-footer-uoc-max-width-tablet;
+  }
+
+  @include computer() {
+    max-width: variables.$img-footer-uoc-max-width-computer;
+  }
 }
 
 footer a {
