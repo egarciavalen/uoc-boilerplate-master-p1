@@ -260,26 +260,24 @@ section header {
   margin-bottom: 0.5rem;
 }
 
-.section_header_img {
-  /* Definición del tamaño que tendrá el icono relacionado con el espacio */
-  max-width: variables.$img-section-header-max-width-mobile;
-  /* Para que se pueda ver el icono relacionado con el espacio */
-  background-color: white;
-  /* Redondear el icono relacionado con el espacio */
-  border-radius: 1rem;
+.section_header_svg {
+  // Se usa un svg para poder cambiarle el color
+  fill: white;  
+  /* Definición del tamaño que tendrá el icono de cohete espacial */
+  max-width: variables.$svg-section-header-max-width-mobile;
 
-  // Media queries
+ // Media queries
   @include tablet() {
-    max-width: variables.$img-section-header-max-width-tablet;
+    max-width: variables.$svg-section-header-max-width-tablet;
   }
 
   @include computer() {
-    max-width: variables.$img-section-header-max-width-computer;
+    max-width: variables.$svg-section-header-max-width-computer;
   }
 }
 
 .section_content_img {
-  /* Definición del tamaño que tendrá el icono relacionado con el espacio */
+  /* Definición del tamaño que tendrán las imágenes relacionadas con la temática espacial */
   max-width: variables.$img-section-content-max-width-mobile;
 
   // Media queries
@@ -291,7 +289,6 @@ section header {
     max-width: variables.$img-section-content-max-width-computer;
   }
 }
-
 
 section p, .section_nested_ul {
   /* Márgenes internos del texto y las listas dentro de las secciones */
