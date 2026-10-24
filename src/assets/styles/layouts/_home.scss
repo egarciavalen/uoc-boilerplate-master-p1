@@ -184,6 +184,12 @@ ul { list-style-type: none; }
   border: 0.2rem white solid;
 }
 
+.body-header-navigation ul a:hover {
+  // Necesario para que se refleje el cambio al mover el ratón por encima
+  color: variables.$primary-color;
+  background-color: variables.$secondary-color;
+}
+
 // ARTÍCULO
 
 .article-align { @include flex-center(column); }
