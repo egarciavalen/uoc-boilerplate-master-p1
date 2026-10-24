@@ -2,9 +2,6 @@
 @use "../variables";
 @use "../functions";
 @use "../reset";
-// Módulos de Sass
-@use 'sass:math';
-
 
 // Sass: mixins
 
@@ -39,13 +36,6 @@
   @media screen and (min-width: 1251px) {
     @content;
   }
-}
-
-// Sass: funciones
-
-@function getMillionsKilometersByLightyears($lightyears) {
-  // Uso de un operador: *
-  @return math.ceil($lightyears * 9460730);
 }
 
 // Como base, se parte de un diseño móvil
@@ -395,5 +385,5 @@ footer a:hover {
 
 .show-kilometers::after {
   // Interpolación de variables y "" para que se registre el contenido
-  content: "#{getMillionsKilometersByLightyears(11.9)}";
+  content: "#{functions.getMillionsKilometersByLightyears(11.9)}";
 }

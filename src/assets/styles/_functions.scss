@@ -1,4 +1,7 @@
 /* Sass: funciones */
+// Módulos de Sass
+@use 'sass:math';
+
 
 @function getMillionsKilometersByLightyears($lightyears) {
   // Uso de un operador: *
