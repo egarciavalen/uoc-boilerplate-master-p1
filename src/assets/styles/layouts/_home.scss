@@ -36,8 +36,7 @@
 
   // header--background
   @at-root #{&}--background {
-    // Reducir warnings validador CSS
-    color: inherit;
+    // ¿Color? Entra en conflicto con otras reglas
     // Color de fondo para que no quede mezclado con los puntos
     background-color: #000000;
     border: 0.2rem #ffffff solid;
