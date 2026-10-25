@@ -85,6 +85,9 @@
 
   // article__image--show
   @at-root #{&}__image--show { @include mixins.animation(5s, show-animation-appear); }
+
+  // article--padding
+  @at-root #{&}--padding { padding-inline: 1rem;}
 }
 
 
