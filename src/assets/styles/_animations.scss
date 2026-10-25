@@ -1,0 +1,16 @@
+// Fichero aparte donde se definen las animaciones usadas en la aplicación
+
+@keyframes show-animation-appear {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes show-animation-left {
+  0% { transform: translateX(-80%); }
+  100%  { transform: translateX(0); }
+}
+
+@keyframes show-animation-right {
+  0% { transform: translateX(100%); }
+  100%  { transform: translateX(0); }
+}

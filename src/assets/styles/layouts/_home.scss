@@ -1,68 +1,17 @@
-// Módulos Sass propios de la aplicación
 @use "../variables";
+@use "./base";
 @use "../functions";
-@use "../reset";
+@use "../mixins";
+@use "../animations";
 
-// Sass: mixins
+// HEADER GLOBAL DE LA PÁGINA
 
-@mixin star-background() {
-  // Fondo empleado para simular un espacio de puntos
-  background-image: variables.$star-background-image;
-  // Con esta propiedad se definen las veces que se repetirán el patrón
-  background-size: variables.$star-background-size;
+.header {
+  @include mixins.star-background();
+  @include mixins.flex-center(column);
 }
 
-@mixin flex-center($direction: row) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-}
-
-@mixin animation($duration, $name) {
-  animation-duration: $duration;
-  animation-name: $name;
-}
-
-// Para las media queries
-@mixin tablet {
-  @media screen and (min-width: 700px) and (max-width: 1250px) {
-    // Todos los estilos especificados dentro (@content) se aplica a la media query
-    @content;
-  }
-}
-
-@mixin computer {
-  @media screen and (min-width: 1251px) {
-    @content;
-  }
-}
-
-// Como base, se parte de un diseño móvil
-
-// Code Guide by @mdo: inline: izquierda/derecha; block: arriba/abajo
-// Code Guide by @mdo: positioning, box model, typocraphic, visual, misc (orden de propiedades)
-
-// GENERAL A TODO EL DOCUMENTO
-
-html {
-  font-family: variables.$html-font-family;
-  font-weight: variables.$html-font-weight;
-  font-style: variables.$html-font-style;
-  background: variables.$html-background;
-  // Eliminar el contenido horizontal que se desborda (en este contexto no habrá pérdida de información)
-  overflow-x: hidden;
-}
-
-// GESTIÓN DE LOS TÍTULOS, TEXTO Y OTROS ELEMENTOS GENERALES
-
-h1, 
-h2, 
-h3, 
-p, 
-ul { color: variables.$secondary-color; }
-
-h1 {
+.header__title {
   // Colocación del título
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -70,176 +19,101 @@ h1 {
   padding: 0.8rem;
   // Cambio del estilo de texto
   font-style: italic;
-  font-size: variables.$h1-font-size-mobile;
-  
-  // Media queries
-  @include tablet() {
-    font-size: variables.$h1-font-size-tablet;
-  }
-
-  @include computer() {
-    font-size: variables.$h1-font-size-computer;
-  }  
-
-  // Sirve para que se lea mejor frente al fondo con puntos
-  background-color: black;
-  border: 0.2rem white solid;
 }
 
-h2 {
-  // Margen inferior con el texto de abajo
-  margin-bottom: 1rem;
-  font-size: variables.$h2-font-size-mobile;
-
-  // Media queries
-  @include tablet() {
-    font-size: variables.$h2-font-size-tablet;
-  }
-
-  @include computer() {
-    font-size: variables.$h2-font-size-computer;
-  }  
-}
-
-h3 {
-  // Márgenes de separación con los iconos*/
-  margin-inline: 0.5rem;
-  font-size: variables.$h3-font-size-mobile;
-
-  // Media queries
-  @include tablet() {
-    font-size: variables.$h3-font-size-tablet;
-  }
-
-  @include computer() {
-    font-size: variables.$h3-font-size-computer;
-  }  
-}
-
-p {
-  font-size: variables.$p-font-size-mobile;
-  line-height: 1.5em;
-
-  // Media queries
-  @include tablet() {
-    font-size: variables.$p-font-size-tablet;
-  }
-
-  @include computer() {
-    font-size: variables.$p-font-size-computer;
-  }  
-}
-
-a {
-  // Margen interno por defecto
-  padding: 0.1rem;
-  // Elimina la raya inferior
-  text-decoration: none;
-  // Aplicación del color + color de fondo
-  color: variables.$secondary-color;
-  background-color: variables.$primary-color;
-}
-
-a:hover {
-  // Al pulsar el ratón por encima, se invertirán los controles
-  color: variables.$primary-color;
-  background-color: variables.$secondary-color;
-}
-
-ul { list-style-type: none; }
-
-// CABECERA Y MENÚ DE NAVEGACIÓN GENERAL 
-
-.body-header{
-  // Margen interno inferior adicional
-  padding-bottom: 0.5rem;
-  @include flex-center(column);
-  @include star-background();
-}
-
-.body-header-navigation ul {
-  @include flex-center(row);
+.header__list {
+  @include mixins.flex-center(row);
   // Esto evitará un "overflow" en caso de que no encaje en la misma línea
   flex-wrap: wrap;
-  // La navegación general NO usará puntos 
-  list-style-type: none;
 }
 
-.body-header-navigation ul li { margin: 1rem; }
+.header__item { margin: 1rem; }
 
-.body-header-navigation ul a {
-  padding: 0.3rem;
+.header__link { padding: 0.3rem; }
+
+.header--background {
   // Color de fondo para que no quede mezclado con los puntos
   background-color: black;  
-  border: 0.2rem white solid;
-}
-
-.body-header-navigation ul a:hover {
-  // Necesario para que se refleje el cambio al mover el ratón por encima
-  color: variables.$primary-color;
-  background-color: variables.$secondary-color;
+  border: 0.2rem white solid; 
 }
 
 // ARTÍCULO
 
-.article-align { @include flex-center(column); }
+.article { @include mixins.flex-center(column); }
 
-.article-header {
-  margin-top: 2rem;
-  @include flex-center(column);
+.article__title { margin-bottom: 1rem; }
+
+.article__header {
+  margin-top: 1rem;
   text-align: center;
 }
 
-.article-header img {
+.article__header--kilometers::after {
+  // Interpolación de variables y "" para que se registre el contenido
+  content: "#{functions.getMillionsKilometersByLightyears(11.9)}";
+}
+
+.article__image {
   // Separación con el texto de arriba y las secciones de abajo
   margin-block: 1rem;
   // Definición del tamaño que ocupará la imagen
   max-width: variables.$img-astronaut-header-max-width-mobile;
 
   // Media queries
-  @include tablet() {
+  @include mixins.tablet() {
     max-width: variables.$img-astronaut-header-max-width-tablet;
   }
 
-  @include computer() {
+  @include mixins.computer() {
     max-width: variables.$img-astronaut-header-max-width-computer;
   }
-
-  @include animation(5s, show-animation-appear);
 }
+
+.article__image--clip { clip-path: circle(variables.$circle-clip-path); }
+
+.article__image--show {
+  @include mixins.animation(5s, show-animation-appear);
+}
+
+
+// SECCIONES
 
 section {
   // Margen inferior entre secciones*/
   margin-bottom: 2rem;
-  @include star-background(); 
   // Ancho que ocupará cada sección
   max-width: variables.$section-max-width-mobile;
 
   // Media queries
-  @include tablet() {
+  @include mixins.tablet() {
     max-width: variables.$section-max-width-tablet;
   }
 
-  @include computer() {
+  @include mixins.computer() {
     max-width: variables.$section-max-width-computer;
   }
 
+  @include mixins.star-background(); 
   border: 0.15rem solid black;
   border-radius: 1rem;
 }
 
-section header { margin-block: 0.5rem; }
+.section__header { margin-block: 0.5rem; }
 
-.section-header-svg {
+.section__title { @include mixins.flex-center(); }
+
+.section__title--margin { margin-inline: 0.5rem; }
+
+.section__svg {
   // Definición del tamaño que tendrá el icono de cohete espacial
   max-width: variables.$svg-section-header-max-width-mobile;
 
  // Media queries
-  @include tablet() {
+  @include mixins.tablet() {
     max-width: variables.$svg-section-header-max-width-tablet;
   }
 
-  @include computer() {
+  @include mixins.computer() {
     max-width: variables.$svg-section-header-max-width-computer;
   }
 
@@ -247,29 +121,7 @@ section header { margin-block: 0.5rem; }
   fill: white;  
 }
 
-.section-content-img {
-  max-width: variables.$img-section-content-max-width-mobile;
-
-  // Media queries
-  @include tablet() {
-    max-width: variables.$img-section-content-max-width-tablet;
-  }
-
-  @include computer() {
-    max-width: variables.$img-section-content-max-width-computer;
-  }
-}
-
-section p, 
-.section-nested-ul {
-  // Márgenes internos del texto y las listas dentro de las secciones
-  padding-block: 0.5rem;
-  padding-inline: 2rem;
-}
-
-.section-content-header { @include flex-center(); }
-
-.section-content-text {
+.section__content {
   // Bordes inferiores redondeados
   border-bottom-left-radius: 0.8rem;
   border-bottom-right-radius: 0.8rem;
@@ -277,18 +129,28 @@ section p,
   background-color: variables.$tertiary-color;
 }
 
-.section-animation-left { @include animation(4s, show-animation-left); }
+.section__content--padding {
+  padding-block: 0.5rem;
+  padding-inline: 2rem;
+}
 
-.section-animation-right { @include animation(4s, show-animation-right); }
+.section--animationleft { @include mixins.animation(4s, show-animation-left); }
 
-.section-nested-li {
+.section--animationright { @include mixins.animation(4s, show-animation-right); }
+
+.section__list {
+  padding-block: 0.5rem;
+  padding-inline: 2rem;  
+}
+
+.section__item {
   // Margen superior respecto a la cabecera de la sección
   margin-top: 1rem;
   // Incremento del tamaño de fuente para que haya diferencia respecto a las respectivas listas internas*/
   font-size: 1.2rem;
 }
 
-.section-inside-nested-li {
+.section__item--nested {
   // Márgenes superior/inferior externos para que se lea mejor cada apartado
   margin-block: 1rem;
   font-size: 1rem;
@@ -296,25 +158,34 @@ section p,
   line-height: 1.5em;
 }
 
-.section-inside-nested-li::before { content: "\025B6"; }
+.section__item--nested::before { content: "\025B6"; }
+
 
 // FIGURAS
 
-figure {
+.figure {
   // Margen inferior superior para que no quede pegado a la cabecera
   padding-top: 1rem;
-  @include flex-center();
+  @include mixins.flex-center();
   flex-direction: column;
 }
 
-figure img {
-  // Ancho máximo que ocupará la imagen
-  max-width: 8rem;
+.figure__image {
+  max-width: variables.$img-section-content-max-width-mobile;
+  // Media queries
+  @include mixins.tablet() {
+    max-width: variables.$img-section-content-max-width-tablet;
+  }
+
+  @include mixins.computer() {
+    max-width: variables.$img-section-content-max-width-computer;
+  }
+
   border: 0.2rem black solid;
   border-radius: 1rem;
 }
 
-figure figcaption {
+.figure__figcaption {
   margin: 1rem;
   font-size: 0.8em;
   color: variables.$secondary-color;
@@ -322,25 +193,25 @@ figure figcaption {
 
 // PIE DE PÁGINA
 
-footer {
+.footer {
   padding: 1rem;
   background-color: variables.$primary-color;
   text-align: center;
 }
 
-footer p { padding-top: 1rem; }
+.footer__content { padding-top: 1rem; }
 
-footer img {
+.footer__image {
   margin-block: 1rem;
   // Ancho que ocupará la imagen
   max-width: variables.$img-footer-uoc-max-width-mobile;
 
   // Media queries
-  @include tablet() {
+  @include mixins.tablet() {
     max-width: variables.$img-footer-uoc-max-width-tablet;
   }
 
-  @include computer() {
+  @include mixins.computer() {
     max-width: variables.$img-footer-uoc-max-width-computer;
   }
 
@@ -348,42 +219,14 @@ footer img {
   background-color: white;
 }
 
-footer a {
+.footer__link {
   // En el footer se invertirán los colores respecto a a {...} declarado previamente
   color: variables.$primary-color;
   background-color: variables.$secondary-color;
 }
 
-footer a:hover {
+.footer__link:hover {
   // En el footer se invertirán los colores respecto a a:hover {...} declarado previamente
   color: variables.$secondary-color;
   background-color: variables.$primary-color;
-}
-
-
-// ANIMACIONES
-
-@keyframes show-animation-appear {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-@keyframes show-animation-left {
-  0% { transform: translateX(-80%); }
-  100%  { transform: translateX(0); }
-}
-
-@keyframes show-animation-right {
-  0% { transform: translateX(100%); }
-  100%  { transform: translateX(0); }
-}
-
-// OTROS ELEMENTOS
-
-.circle { clip-path: circle(variables.$circle-clip-path); }
-
-.show-kilometers::after {
-  // Interpolación de variables y "" para que se registre el contenido
-  content: "#{functions.getMillionsKilometersByLightyears(11.9)}";
 }

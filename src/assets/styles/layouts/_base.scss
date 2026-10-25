@@ -1,0 +1,101 @@
+// CSS base que se aplicará a nivel general
+
+@use "../variables";
+@use "../mixins";
+*,
+*:after,
+*:before {
+    /* Elimina los márgenes internos y externos */
+    margin: 0;
+    padding: 0;
+    /* Hace que el padding y border pase a formar parte del cálculo del ancho de la caja */
+    box-sizing: border-box;
+}
+
+html {
+  font-family: variables.$html-font-family;
+  font-weight: variables.$html-font-weight;
+  font-style: variables.$html-font-style;
+  background: variables.$html-background;
+  // Eliminar el contenido horizontal que se desborda (en este contexto no habrá pérdida de información)
+  overflow-x: hidden;
+}
+
+// GESTIÓN DE LOS TÍTULOS, TEXTO Y OTROS ELEMENTOS GENERALES
+
+h1, 
+h2, 
+h3, 
+p, 
+ul { color: variables.$secondary-color; }
+
+h1 {
+  font-size: variables.$h1-font-size-mobile;
+  
+  // Media queries
+  @include mixins.tablet() {
+    font-size: variables.$h1-font-size-tablet;
+  }
+
+  @include mixins.computer() {
+    font-size: variables.$h1-font-size-computer;
+  }  
+}
+
+h2 {
+  font-size: variables.$h2-font-size-mobile;
+
+  // Media queries
+  @include mixins.tablet() {
+    font-size: variables.$h2-font-size-tablet;
+  }
+
+  @include mixins.computer() {
+    font-size: variables.$h2-font-size-computer;
+  }  
+}
+
+h3 {
+  font-size: variables.$h3-font-size-mobile;
+
+  // Media queries
+  @include mixins.tablet() {
+    font-size: variables.$h3-font-size-tablet;
+  }
+
+  @include mixins.computer() {
+    font-size: variables.$h3-font-size-computer;
+  }  
+}
+
+p {
+  font-size: variables.$p-font-size-mobile;
+  line-height: 1.5em;
+
+  // Media queries
+  @include mixins.tablet() {
+    font-size: variables.$p-font-size-tablet;
+  }
+
+  @include mixins.computer() {
+    font-size: variables.$p-font-size-computer;
+  }  
+}
+
+a {
+  // Margen interno por defecto
+  padding: 0.1rem;
+  // Elimina la raya inferior
+  text-decoration: none;
+  // Aplicación del color + color de fondo
+  color: variables.$secondary-color;
+  background-color: variables.$primary-color;
+}
+
+a:hover {
+  // Al pulsar el ratón por encima, se invertirán los controles
+  color: variables.$primary-color;
+  background-color: variables.$secondary-color;
+}
+
+ul { list-style-type: none; }

@@ -1,0 +1,36 @@
+@use "./variables";
+
+// Fichero aparte donde se definien los mixins reutilizables en la aplicación 
+
+@mixin star-background() {
+  // Fondo empleado para simular un espacio de puntos
+  background-image: variables.$star-background-image;
+  // Con esta propiedad se definen las veces que se repetirán el patrón
+  background-size: variables.$star-background-size;
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin animation($duration, $name) {
+  animation-duration: $duration;
+  animation-name: $name;
+}
+
+// Para las media queries
+@mixin tablet {
+  @media screen and (min-width: 700px) and (max-width: 1250px) {
+    // Todos los estilos especificados dentro (@content) se aplica a la media query
+    @content;
+  }
+}
+
+@mixin computer {
+  @media screen and (min-width: 1251px) {
+    @content;
+  }
+}
