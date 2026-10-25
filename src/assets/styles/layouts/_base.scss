@@ -26,7 +26,11 @@ h1,
 h2, 
 h3, 
 p, 
-ul { color: variables.$secondary-color; }
+ul { 
+  color: variables.$secondary-color;
+  // Reducir warnings validador CSS
+  background-color: inherit;
+}
 
 h1 {
   font-size: variables.$h1-font-size-mobile;

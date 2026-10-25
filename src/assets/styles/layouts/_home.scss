@@ -36,6 +36,8 @@
 
   // header--background
   @at-root #{&}--background {
+    // Reducir warnings validador CSS
+    color: inherit;
     // Color de fondo para que no quede mezclado con los puntos
     background-color: #000000;
     border: 0.2rem #ffffff solid;
@@ -137,8 +139,10 @@
 
   // section__content
   @at-root #{&}__content { 
+    // Reducir warnings validador CSS
+    color: inherit;
     // Color de fondo de las secciones
-    background-color: variables.$tertiary-color;    
+    background-color: variables.$tertiary-color;   
     // Bordes inferiores redondeados
     border-bottom-right-radius: 0.8rem;
     border-bottom-left-radius: 0.8rem;
@@ -216,6 +220,8 @@
     margin: 1rem;
     font-size: 0.8rem;
     color: variables.$secondary-color;
+    // Reducir warnings validador CSS
+    background-color: inherit; 
   }
 }
 
@@ -223,6 +229,8 @@
 
 .footer {
   padding: 1rem;
+  // Reducir warnings validador CSS
+  color: inherit;
   text-align: center;
   background-color: variables.$primary-color;
 
@@ -243,7 +251,8 @@
     @include mixins.computer() {
       max-width: variables.$img-footer-uoc-max-width-computer;
     }
-
+    // Reducir warnings validador CSS
+    color: inherit; 
     // Color de fondo para que se pueda leer el logo
     background-color: #ffffff;
   }
