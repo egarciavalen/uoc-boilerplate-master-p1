@@ -9,76 +9,87 @@
 .header {
   @include mixins.star-background();
   @include mixins.flex-center(column);
-}
 
-.header__title {
-  // Colocación del título
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  // Margen interno
-  padding: 0.8rem;
-  // Cambio del estilo de texto
-  font-style: italic;
-}
+  // header__title
+  @at-root #{&}__title {
+    // Colocación del título
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    // Margen interno
+    padding: 0.8rem;
+    // Cambio del estilo de texto
+    font-style: italic;
+  }
 
-.header__list {
-  @include mixins.flex-center(row);
-  // Esto evitará un "overflow" en caso de que no encaje en la misma línea
-  flex-wrap: wrap;
-}
+  // header__list
+  @at-root #{&}__list {
+    @include mixins.flex-center(row);
+    // Esto evitará un "overflow" en caso de que no encaje en la misma línea
+    flex-wrap: wrap;
+  }
 
-.header__item { margin: 1rem; }
+  // header__item
+  @at-root #{&}__item { margin: 1rem; }
 
-.header__link { padding: 0.3rem; }
+  // header__link
+  @at-root #{&}__link { padding: 0.3rem; }
 
-.header--background {
-  // Color de fondo para que no quede mezclado con los puntos
-  background-color: black;  
-  border: 0.2rem white solid; 
+  // header--background
+  @at-root #{&}--background {
+    // Color de fondo para que no quede mezclado con los puntos
+    background-color: black;
+    border: 0.2rem white solid;
+  }
 }
 
 // ARTÍCULO
 
-.article { @include mixins.flex-center(column); }
+.article {
+  @include mixins.flex-center(column);
 
-.article__title { margin-bottom: 1rem; }
+  // article__title
+  @at-root #{&}__title { margin-bottom: 1rem; }
 
-.article__header {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.article__header--kilometers::after {
-  // Interpolación de variables y "" para que se registre el contenido
-  content: "#{functions.getMillionsKilometersByLightyears(11.9)}";
-}
-
-.article__image {
-  // Separación con el texto de arriba y las secciones de abajo
-  margin-block: 1rem;
-  // Definición del tamaño que ocupará la imagen
-  max-width: variables.$img-astronaut-header-max-width-mobile;
-
-  // Media queries
-  @include mixins.tablet() {
-    max-width: variables.$img-astronaut-header-max-width-tablet;
+  // article__header
+  @at-root #{&}__header {
+    margin-top: 1rem;
+    text-align: center;
   }
 
-  @include mixins.computer() {
-    max-width: variables.$img-astronaut-header-max-width-computer;
+  // article__header--kilometers::after
+  @at-root #{&}__header--kilometers::after {
+    // Interpolación de variables y "" para que se registre el contenido
+    content: "#{functions.getMillionsKilometersByLightyears(11.9)}";
   }
-}
 
-.article__image--clip { clip-path: circle(variables.$circle-clip-path); }
+  // article__image
+  @at-root #{&}__image {
+    // Separación con el texto de arriba y las secciones de abajo
+    margin-block: 1rem;
+    // Definición del tamaño que ocupará la imagen
+    max-width: variables.$img-astronaut-header-max-width-mobile;
 
-.article__image--show {
-  @include mixins.animation(5s, show-animation-appear);
+    // Media queries
+    @include mixins.tablet() {
+      max-width: variables.$img-astronaut-header-max-width-tablet;
+    }
+
+    @include mixins.computer() {
+      max-width: variables.$img-astronaut-header-max-width-computer;
+    }
+  }
+
+  // article__image--clip
+  @at-root #{&}__image--clip {  clip-path: circle(variables.$circle-clip-path); }
+
+  // article__image--show
+  @at-root #{&}__image--show { @include mixins.animation(5s, show-animation-appear); }
 }
 
 
 // SECCIONES
 
-section {
+.section {
   // Margen inferior entre secciones*/
   margin-bottom: 2rem;
   // Ancho que ocupará cada sección
@@ -93,72 +104,87 @@ section {
     max-width: variables.$section-max-width-computer;
   }
 
-  @include mixins.star-background(); 
+  @include mixins.star-background();
   border: 0.15rem solid black;
   border-radius: 1rem;
-}
 
-.section__header { margin-block: 0.5rem; }
+  // section__header
+  @at-root #{&}__header { margin-block: 0.5rem; }
 
-.section__title { @include mixins.flex-center(); }
+  // section__title
+  @at-root #{&}__title { @include mixins.flex-center(); }
 
-.section__title--margin { margin-inline: 0.5rem; }
+  // section__title--margin
+  @at-root #{&}__title--margin { margin-inline: 0.5rem; }
 
-.section__svg {
-  // Definición del tamaño que tendrá el icono de cohete espacial
-  max-width: variables.$svg-section-header-max-width-mobile;
+  // section__svg
+  @at-root #{&}__svg{
+    // Definición del tamaño que tendrá el icono de cohete espacial
+    max-width: variables.$svg-section-header-max-width-mobile;
 
- // Media queries
-  @include mixins.tablet() {
-    max-width: variables.$svg-section-header-max-width-tablet;
+    // Media queries
+    @include mixins.tablet() {
+      max-width: variables.$svg-section-header-max-width-tablet;
+    }
+
+    @include mixins.computer() {
+      max-width: variables.$svg-section-header-max-width-computer;
+    }
+
+    // Se usa un svg para poder cambiarle el color
+    fill: white;
   }
 
-  @include mixins.computer() {
-    max-width: variables.$svg-section-header-max-width-computer;
+  // section__content
+  @at-root #{&}__content { 
+    // Bordes inferiores redondeados
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    // Color de fondo de las secciones
+    background-color: variables.$tertiary-color;    
   }
 
-  // Se usa un svg para poder cambiarle el color
-  fill: white;  
+  // section__content--padding
+  @at-root #{&}__content--padding { 
+    padding-block: 0.5rem;
+    padding-inline: 2rem;  
+  }
+
+  // section--animationleft
+  @at-root #{&}--animationleft { @include mixins.animation(4s, show-animation-left); }
+
+  // section--animationright
+  @at-root #{&}--animationright { @include mixins.animation(4s, show-animation-right); }
+
+  // section__list
+  @at-root #{&}__list { 
+    padding-block: 0.5rem;
+    padding-inline: 2rem;
+  }
+
+  // section__item
+  @at-root #{&}__item { 
+    // Margen superior respecto a la cabecera de la sección
+    margin-top: 1rem;
+    // Incremento del tamaño de fuente para que haya diferencia respecto a las respectivas listas internas*/
+    font-size: 1.2rem;
+  }
+
+  // section__item--nested
+  @at-root #{&}__item--nested { 
+    // Margenes superior/inferior externos para que se lea mejor cada apartado
+    margin-block: 1rem;
+    // Margen exteriore izquierdo para que no se lea todo en la misma posición vertical
+    margin-left: 1rem;
+    font-size: 1rem;
+    // Modificación del alto por defecto entre párrafos para facilitar la lectura
+    line-height: 1.5em;
+  }
+
+  // section__item--nested::before
+  @at-root #{&}__item--nested::before { content: "\025B6"; }
 }
 
-.section__content {
-  // Bordes inferiores redondeados
-  border-bottom-left-radius: 0.8rem;
-  border-bottom-right-radius: 0.8rem;
-  // Color de fondo de las secciones
-  background-color: variables.$tertiary-color;
-}
-
-.section__content--padding {
-  padding-block: 0.5rem;
-  padding-inline: 2rem;
-}
-
-.section--animationleft { @include mixins.animation(4s, show-animation-left); }
-
-.section--animationright { @include mixins.animation(4s, show-animation-right); }
-
-.section__list {
-  padding-block: 0.5rem;
-  padding-inline: 2rem;  
-}
-
-.section__item {
-  // Margen superior respecto a la cabecera de la sección
-  margin-top: 1rem;
-  // Incremento del tamaño de fuente para que haya diferencia respecto a las respectivas listas internas*/
-  font-size: 1.2rem;
-}
-
-.section__item--nested {
-  // Márgenes superior/inferior externos para que se lea mejor cada apartado
-  margin-block: 1rem;
-  font-size: 1rem;
-  // Modificación del alto por defecto entre párrafos para facilitar la lectura
-  line-height: 1.5em;
-}
-
-.section__item--nested::before { content: "\025B6"; }
 
 
 // FIGURAS
@@ -168,27 +194,29 @@ section {
   padding-top: 1rem;
   @include mixins.flex-center();
   flex-direction: column;
-}
 
-.figure__image {
-  max-width: variables.$img-section-content-max-width-mobile;
-  // Media queries
-  @include mixins.tablet() {
-    max-width: variables.$img-section-content-max-width-tablet;
+  // figure__image
+  @at-root #{&}__image { 
+    max-width: variables.$img-section-content-max-width-mobile;
+    // Media queries
+    @include mixins.tablet() {
+      max-width: variables.$img-section-content-max-width-tablet;
+    }
+
+    @include mixins.computer() {
+      max-width: variables.$img-section-content-max-width-computer;
+    }
+
+    border: 0.2rem black solid;
+    border-radius: 1rem;
   }
 
-  @include mixins.computer() {
-    max-width: variables.$img-section-content-max-width-computer;
+  // figure__figcaption
+  @at-root #{&}__figcaption { 
+    margin: 1rem;
+    font-size: 0.8em;
+    color: variables.$secondary-color;
   }
-
-  border: 0.2rem black solid;
-  border-radius: 1rem;
-}
-
-.figure__figcaption {
-  margin: 1rem;
-  font-size: 0.8em;
-  color: variables.$secondary-color;
 }
 
 // PIE DE PÁGINA
@@ -197,36 +225,40 @@ section {
   padding: 1rem;
   background-color: variables.$primary-color;
   text-align: center;
-}
 
-.footer__content { padding-top: 1rem; }
+  // footer__content
+  @at-root #{&}__content { padding-top: 1rem; }
 
-.footer__image {
-  margin-block: 1rem;
-  // Ancho que ocupará la imagen
-  max-width: variables.$img-footer-uoc-max-width-mobile;
+  // footer__image
+  @at-root #{&}__image { 
+    margin-block: 1rem;
+    // Ancho que ocupará la imagen
+    max-width: variables.$img-footer-uoc-max-width-mobile;
 
-  // Media queries
-  @include mixins.tablet() {
-    max-width: variables.$img-footer-uoc-max-width-tablet;
+    // Media queries
+    @include mixins.tablet() {
+      max-width: variables.$img-footer-uoc-max-width-tablet;
+    }
+
+    @include mixins.computer() {
+      max-width: variables.$img-footer-uoc-max-width-computer;
+    }
+
+    // Color de fondo para que se pueda leer el logo
+    background-color: white;
   }
 
-  @include mixins.computer() {
-    max-width: variables.$img-footer-uoc-max-width-computer;
+  // footer__link
+  @at-root #{&}__link { 
+    // En el footer se invertirán los colores respecto a a {...} declarado previamente
+    color: variables.$primary-color;
+    background-color: variables.$secondary-color;
   }
 
-  // Color de fondo para que se pueda leer el logo
-  background-color: white;
-}
-
-.footer__link {
-  // En el footer se invertirán los colores respecto a a {...} declarado previamente
-  color: variables.$primary-color;
-  background-color: variables.$secondary-color;
-}
-
-.footer__link:hover {
+  // footer__link:hover
+  @at-root #{&}__link:hover { 
   // En el footer se invertirán los colores respecto a a:hover {...} declarado previamente
   color: variables.$secondary-color;
   background-color: variables.$primary-color;
+  }
 }
