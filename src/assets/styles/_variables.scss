@@ -1,7 +1,7 @@
 // Sass: uso de variables
 
 // Fondo estrellado
-$star-background-image: radial-gradient(5% 5%, white 99%, black);
+$star-background-image: radial-gradient(5% 5%, #ffffff 99%, #000000);
 $star-background-size: 0.8rem 0.8rem;
 
 // Fuente de letra
@@ -10,9 +10,9 @@ $html-font-weight: 400;
 $html-font-style: normal;
 
 // Colores
-$html-background: radial-gradient(circle at center, red 0, blue 100%);
-$primary-color: black;
-$secondary-color: white;
+$html-background: radial-gradient(circle at center, #ff0000 0, #0000ff 100%);
+$primary-color: #000000;
+$secondary-color: #ffffff;
 $tertiary-color: #480794;
 
 // Tamaños de letra

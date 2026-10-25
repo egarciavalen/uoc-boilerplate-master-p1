@@ -37,8 +37,8 @@
   // header--background
   @at-root #{&}--background {
     // Color de fondo para que no quede mezclado con los puntos
-    background-color: black;
-    border: 0.2rem white solid;
+    background-color: #000000;
+    border: 0.2rem #ffffff solid;
   }
 }
 
@@ -105,7 +105,7 @@
   }
 
   @include mixins.star-background();
-  border: 0.15rem solid black;
+  border: 0.15rem solid #000000;
   border-radius: 1rem;
 
   // section__header
@@ -132,7 +132,7 @@
     }
 
     // Se usa un svg para poder cambiarle el color
-    fill: white;
+    fill: #ffffff;
   }
 
   // section__content
@@ -178,7 +178,7 @@
     margin-left: 1rem;
     font-size: 1rem;
     // Modificación del alto por defecto entre párrafos para facilitar la lectura
-    line-height: 1.5em;
+    line-height: 1.5rem;
   }
 
   // section__item--nested::before
@@ -207,14 +207,14 @@
       max-width: variables.$img-section-content-max-width-computer;
     }
 
-    border: 0.2rem black solid;
+    border: 0.2rem #000000 solid;
     border-radius: 1rem;
   }
 
   // figure__figcaption
   @at-root #{&}__figcaption { 
     margin: 1rem;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     color: variables.$secondary-color;
   }
 }
@@ -245,7 +245,7 @@
     }
 
     // Color de fondo para que se pueda leer el logo
-    background-color: white;
+    background-color: #ffffff;
   }
 
   // footer__link
