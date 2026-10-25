@@ -12,11 +12,11 @@
 
   // header__title
   @at-root #{&}__title {
+    // Margen interno
+    padding: 0.8rem;
     // Colocación del título
     margin-top: 2rem;
     margin-bottom: 1rem;
-    // Margen interno
-    padding: 0.8rem;
     // Cambio del estilo de texto
     font-style: italic;
   }
@@ -64,10 +64,10 @@
 
   // article__image
   @at-root #{&}__image {
-    // Separación con el texto de arriba y las secciones de abajo
-    margin-block: 1rem;
     // Definición del tamaño que ocupará la imagen
     max-width: variables.$img-astronaut-header-max-width-mobile;
+    // Separación con el texto de arriba y las secciones de abajo
+    margin-block: 1rem;
 
     // Media queries
     @include mixins.tablet() {
@@ -90,10 +90,10 @@
 // SECCIONES
 
 .section {
-  // Margen inferior entre secciones*/
-  margin-bottom: 2rem;
   // Ancho que ocupará cada sección
   max-width: variables.$section-max-width-mobile;
+  // Margen inferior entre secciones*/
+  margin-bottom: 2rem;
 
   // Media queries
   @include mixins.tablet() {
@@ -137,11 +137,11 @@
 
   // section__content
   @at-root #{&}__content { 
-    // Bordes inferiores redondeados
-    border-bottom-left-radius: 0.8rem;
-    border-bottom-right-radius: 0.8rem;
     // Color de fondo de las secciones
     background-color: variables.$tertiary-color;    
+    // Bordes inferiores redondeados
+    border-bottom-right-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
   }
 
   // section__content--padding
@@ -190,10 +190,10 @@
 // FIGURAS
 
 .figure {
-  // Margen inferior superior para que no quede pegado a la cabecera
-  padding-top: 1rem;
   @include mixins.flex-center();
   flex-direction: column;
+  // Margen inferior superior para que no quede pegado a la cabecera
+  padding-top: 1rem;
 
   // figure__image
   @at-root #{&}__image { 
@@ -223,17 +223,17 @@
 
 .footer {
   padding: 1rem;
-  background-color: variables.$primary-color;
   text-align: center;
+  background-color: variables.$primary-color;
 
   // footer__content
   @at-root #{&}__content { padding-top: 1rem; }
 
   // footer__image
   @at-root #{&}__image { 
-    margin-block: 1rem;
     // Ancho que ocupará la imagen
     max-width: variables.$img-footer-uoc-max-width-mobile;
+    margin-block: 1rem;
 
     // Media queries
     @include mixins.tablet() {

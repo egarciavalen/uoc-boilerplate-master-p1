@@ -11,14 +11,14 @@
 
 @mixin flex-center($direction: row) {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin animation($duration, $name) {
-  animation-duration: $duration;
   animation-name: $name;
+  animation-duration: $duration;
 }
 
 // Para las media queries

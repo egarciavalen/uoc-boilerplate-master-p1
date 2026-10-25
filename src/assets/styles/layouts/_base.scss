@@ -5,20 +5,19 @@
 *,
 *:after,
 *:before {
-    /* Elimina los márgenes internos y externos */
-    margin: 0;
-    padding: 0;
-    /* Hace que el padding y border pase a formar parte del cálculo del ancho de la caja */
-    box-sizing: border-box;
+  /* Hace que el padding y border pase a formar parte del cálculo del ancho de la caja */
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
-  font-family: variables.$html-font-family;
-  font-weight: variables.$html-font-weight;
-  font-style: variables.$html-font-style;
-  background: variables.$html-background;
   // Eliminar el contenido horizontal que se desborda (en este contexto no habrá pérdida de información)
   overflow-x: hidden;
+  font-family: variables.$html-font-family;
+  font-style: variables.$html-font-style;
+  font-weight: variables.$html-font-weight;
+  background: variables.$html-background;
 }
 
 // GESTIÓN DE LOS TÍTULOS, TEXTO Y OTROS ELEMENTOS GENERALES
@@ -85,10 +84,10 @@ p {
 a {
   // Margen interno por defecto
   padding: 0.1rem;
-  // Elimina la raya inferior
-  text-decoration: none;
   // Aplicación del color + color de fondo
   color: variables.$secondary-color;
+  // Elimina la raya inferior
+  text-decoration: none;
   background-color: variables.$primary-color;
 }
 
