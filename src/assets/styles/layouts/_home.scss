@@ -38,8 +38,8 @@
   @at-root #{&}--background {
     // ¿Color? Entra en conflicto con otras reglas
     // Color de fondo para que no quede mezclado con los puntos
-    background-color: #000000;
-    border: 0.2rem #ffffff solid;
+    background-color: #000;
+    border: 0.2rem #fff solid;
   }
 }
 
@@ -109,7 +109,7 @@
   }
 
   @include mixins.star-background();
-  border: 0.15rem solid #000000;
+  border: 0.15rem solid #000;
   border-radius: 1rem;
 
   // section__header
@@ -136,7 +136,7 @@
     }
 
     // Se usa un svg para poder cambiarle el color
-    fill: #ffffff;
+    fill: #fff;
   }
 
   // section__content
@@ -213,7 +213,7 @@
       max-width: variables.$img-section-content-max-width-computer;
     }
 
-    border: 0.2rem #000000 solid;
+    border: 0.2rem #000 solid;
     border-radius: 1rem;
   }
 
@@ -256,7 +256,7 @@
     // Reducir warnings validador CSS
     color: inherit; 
     // Color de fondo para que se pueda leer el logo
-    background-color: #ffffff;
+    background-color: #fff;
   }
 
   // footer__link
